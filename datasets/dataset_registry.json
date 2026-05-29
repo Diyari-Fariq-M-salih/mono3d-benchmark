@@ -1,0 +1,18 @@
+{
+  "datasets": [
+    {
+      "name": "euroc",
+      "display_name": "EuRoC MAV",
+      "landing_page": "https://projects.asl.ethz.ch/datasets/euroc-mav/",
+      "target_dir": "datasets/euroc",
+      "notes": "Primary odometry benchmark with synchronized IMU. This repo treats EuRoC as a manual-download dataset; grouped archives are present locally and the first-pass extracted sequences are MH_01_easy, MH_03_medium, and V1_02_medium."
+    },
+    {
+      "name": "eth3d",
+      "display_name": "ETH3D",
+      "landing_page": "https://www.eth3d.net/overview",
+      "target_dir": "datasets/eth3d",
+      "notes": "Primary reconstruction benchmark with ground-truth geometry. Courtyard, delivery_area, and electro archives are present locally and extracted into their scene folders."
+    }
+  ]
+}

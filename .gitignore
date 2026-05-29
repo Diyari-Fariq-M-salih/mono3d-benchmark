@@ -46,3 +46,7 @@ reports/pc_specs.txt
 *.tar
 *.tar.gz
 *.tgz
+
+# Common extraction noise from manual dataset downloads
+.DS_Store
+__MACOSX/

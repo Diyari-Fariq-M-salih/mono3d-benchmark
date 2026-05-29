@@ -1,0 +1,61 @@
+{
+  "datasets": {
+    "eth3d_courtyard_hr": {
+      "target_dir": "datasets/eth3d/high_res_multi_view/courtyard",
+      "archives": [
+        {
+          "filename": "courtyard_dslr_jpg.7z",
+          "url": "https://www.eth3d.net/data/courtyard_dslr_jpg.7z",
+          "extract": "7z"
+        },
+        {
+          "filename": "courtyard_dslr_scan_eval.7z",
+          "url": "https://www.eth3d.net/data/courtyard_dslr_scan_eval.7z",
+          "extract": "7z"
+        }
+      ]
+    },
+    "eth3d_delivery_area_hr": {
+      "target_dir": "datasets/eth3d/high_res_multi_view/delivery_area",
+      "archives": [
+        {
+          "filename": "delivery_area_dslr_jpg.7z",
+          "url": "https://www.eth3d.net/data/delivery_area_dslr_jpg.7z",
+          "extract": "7z"
+        },
+        {
+          "filename": "delivery_area_dslr_scan_eval.7z",
+          "url": "https://www.eth3d.net/data/delivery_area_dslr_scan_eval.7z",
+          "extract": "7z"
+        }
+      ]
+    },
+    "eth3d_electro_hr": {
+      "target_dir": "datasets/eth3d/high_res_multi_view/electro",
+      "archives": [
+        {
+          "filename": "electro_dslr_jpg.7z",
+          "url": "https://www.eth3d.net/data/electro_dslr_jpg.7z",
+          "extract": "7z"
+        },
+        {
+          "filename": "electro_dslr_scan_eval.7z",
+          "url": "https://www.eth3d.net/data/electro_dslr_scan_eval.7z",
+          "extract": "7z"
+        }
+      ]
+    }
+  },
+  "presets": {
+    "eth3d_first_pass": [
+      "eth3d_courtyard_hr",
+      "eth3d_delivery_area_hr",
+      "eth3d_electro_hr"
+    ],
+    "first_reconstruction_data": [
+      "eth3d_courtyard_hr",
+      "eth3d_delivery_area_hr",
+      "eth3d_electro_hr"
+    ]
+  }
+}
