@@ -1,0 +1,71 @@
+{
+  "methods": [
+    {
+      "name": "orb_slam3",
+      "display_name": "ORB-SLAM3",
+      "type": "cpp_slam",
+      "clone_url": "https://github.com/UZ-SLAMLab/ORB_SLAM3.git",
+      "target_dir": "methods/orb_slam3/upstream",
+      "environment_strategy": "docker",
+      "notes": "Primary classical baseline with mono and mono-inertial EuRoC support."
+    },
+    {
+      "name": "dso",
+      "display_name": "DSO",
+      "type": "cpp_odometry",
+      "clone_url": "https://github.com/JakobEngel/dso.git",
+      "target_dir": "methods/dso/upstream",
+      "environment_strategy": "docker",
+      "notes": "Direct monocular odometry baseline."
+    },
+    {
+      "name": "svo",
+      "display_name": "SVO Pro Open",
+      "type": "cpp_odometry",
+      "clone_url": "https://github.com/uzh-rpg/rpg_svo_pro_open.git",
+      "target_dir": "methods/svo/upstream",
+      "environment_strategy": "docker_or_ros",
+      "notes": "Semi-direct odometry baseline using the SVO Pro Open repository."
+    },
+    {
+      "name": "depth_anything_3",
+      "display_name": "Depth Anything 3",
+      "type": "python_reconstruction",
+      "clone_url": "https://github.com/ByteDance-Seed/Depth-Anything-3.git",
+      "target_dir": "methods/depth_anything_3/upstream",
+      "environment_strategy": "venv",
+      "venv_name": "depth_anything_3",
+      "notes": "Dense geometry baseline with streaming submodule in upstream repo. Consider sharing the GPU torch stack with other Python reconstruction methods if dependencies remain compatible."
+    },
+    {
+      "name": "litevggt",
+      "display_name": "LiteVGGT",
+      "type": "python_reconstruction",
+      "clone_url": "https://github.com/facebookresearch/vggt.git",
+      "target_dir": "methods/litevggt/upstream",
+      "environment_strategy": "venv",
+      "venv_name": "litevggt",
+      "notes": "Use the official VGGT codebase with lighter checkpoints or reduced settings suitable for a 12 GB GPU. Prefer a shared GPU torch base if practical."
+    },
+    {
+      "name": "map_anything",
+      "display_name": "MapAnything",
+      "type": "python_reconstruction",
+      "clone_url": "https://github.com/facebookresearch/map-anything.git",
+      "target_dir": "methods/map_anything/upstream",
+      "environment_strategy": "venv",
+      "venv_name": "map_anything",
+      "notes": "Metric 3D reconstruction framework. Prefer a shared GPU torch base if practical."
+    },
+    {
+      "name": "stac_3r",
+      "display_name": "STAC-3R",
+      "type": "python_reconstruction",
+      "clone_url": "https://github.com/Rainzor/STAC.git",
+      "target_dir": "methods/stac_3r/upstream",
+      "environment_strategy": "venv",
+      "venv_name": "stac_3r",
+      "notes": "Official project page: https://stac-3r.github.io/ . Upstream repository is Rainzor/STAC. The upstream README says it was tested on RTX 3090 24 GB and A100 40 GB, so this machine may need conservative settings."
+    }
+  ]
+}
