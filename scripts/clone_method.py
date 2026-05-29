@@ -14,7 +14,7 @@ REGISTRY_PATH = Path("methods/method_registry.json")
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Clone a method repository from the local registry.")
-    parser.add_argument("method_name", help="Registry key, e.g. orb_slam3")
+    parser.add_argument("method_name", help="Registry key, e.g. svo")
     return parser.parse_args()
 
 

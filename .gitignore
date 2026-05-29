@@ -9,6 +9,8 @@ __pycache__/
 .venv/
 venv/
 environment/venv/.venvs/
+environment/ros_ws/
+environment/host/
 
 # Downloaded datasets and extracted dataset contents
 datasets/euroc/*
@@ -26,6 +28,8 @@ datasets/tartanair/*
 
 # Cloned upstream method repositories
 methods/*/upstream/
+methods/orb_slam3/
+methods/dso/
 
 # Generated outputs
 outputs/trajectories/**
@@ -46,6 +50,9 @@ reports/pc_specs.txt
 *.tar
 *.tar.gz
 *.tgz
+
+# Accidental shell-paste artifact
+]
 
 # Common extraction noise from manual dataset downloads
 .DS_Store

@@ -26,8 +26,6 @@ These tracks overlap, but they do not answer the same research question and shou
 
 ### Odometry and SLAM
 
-- `ORB-SLAM3`
-- `DSO`
 - `SVO`
 - `SVO + IMU` if supported by the installed version
 
@@ -64,12 +62,9 @@ Suggested first pass:
 
 The first benchmark milestone is a minimal odometry baseline on EuRoC:
 
-1. Run `ORB-SLAM3` in monocular mode
-2. Run `ORB-SLAM3` in mono-inertial mode
-3. Run `SVO` in monocular mode
-4. Run `SVO + IMU` if available
-5. Run `DSO`
-6. Evaluate trajectories with `evo`
+1. Run `SVO` in monocular mode
+2. Run `SVO + IMU` if available
+3. Evaluate trajectories with `evo`
 
 ## Output Conventions
 
@@ -160,5 +155,10 @@ Environment strategy for reproducibility:
 - avoid duplicate dataset copies
 - use isolated environments when needed, but avoid unnecessary heavyweight extras
 - prefer method-specific repos that are actively aligned with the intended benchmark setup
+- for classical C++ odometry, use `SVO Pro Open` in its own ROS-oriented environment
 
-The next practical step is to finish downloading datasets, stage method-specific environments, and then wire the first real odometry method into `wrappers/run_orb_slam3.py`.
+Current implementation note:
+
+- `SVO Pro Open` is now the only active odometry method path.
+
+The next practical step is to stage the `SVO Pro Open` environment and wire the first real odometry method into `wrappers/run_svo.py`.

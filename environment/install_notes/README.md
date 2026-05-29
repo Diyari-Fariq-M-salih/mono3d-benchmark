@@ -6,7 +6,7 @@ This folder tracks how each dataset and method should be installed in a reproduc
 
 - Use one clean setup path per method.
 - Prefer `venv` for Python-heavy methods.
-- Prefer Docker for legacy C++ or dependency-fragile methods when host installation becomes painful.
+- Prefer Docker or ROS workspaces when host installation becomes painful.
 - Keep original repositories under `methods/`.
 - Keep datasets under `datasets/`.
 - Record every install decision before benchmarking.
@@ -28,19 +28,18 @@ This folder tracks how each dataset and method should be installed in a reproduc
 - Keep batch size, frame count, and checkpoint size conservative for feed-forward 3D models.
 - Treat `MapAnything` and `Depth Anything 3` as installable, but expect reduced inference settings on this GPU.
 - Prefer a shared GPU Python base stack for heavy methods when dependency compatibility allows it, to avoid downloading and storing separate `torch` and CUDA wheels for every method venv.
+- Use `SVO Pro Open` as the only active odometry method implementation path for the current phase.
 
 ## Planned Installation Order
 
 1. Benchmark utility venv
 2. EuRoC dataset
 3. ETH3D dataset
-4. ORB-SLAM3
-5. DSO
-6. SVO Pro Open
-7. Depth Anything 3
-8. LiteVGGT
-9. MapAnything
-10. STAC-3R or nearest available streaming baseline
+4. SVO Pro Open
+5. Depth Anything 3
+6. LiteVGGT
+7. MapAnything
+8. STAC-3R or nearest available streaming baseline
 
 ## Dataset Download Policy
 
@@ -58,6 +57,12 @@ This folder tracks how each dataset and method should be installed in a reproduc
 
 - `STAC-3R` is cloned and documented, but it should be treated as a deferred install on this machine unless we intentionally budget time for reduced-setting experiments.
 - Reason: upstream targets heavier GPUs, requires an additional backbone, and includes optional CUDA extensions plus a comparatively heavy dependency stack.
+
+## Active Odometry Path
+
+- `SVO Pro Open` is the only active odometry method for the current phase.
+- Use the container image `mono3d-benchmark/svo:noetic`.
+- Use `scripts/setup_svo_workspace.sh` and `scripts/build_svo.sh` inside that container for the reproducible workspace flow.
 
 ## Tracking
 

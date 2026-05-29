@@ -4,9 +4,7 @@
 |---|---|---|---|---|---|
 | EuRoC MAV | dataset | official ETH ASL page | manual download into `datasets/euroc` | first-pass-ready | grouped `machine_hall.zip`, `vicon_room1.zip`, and `vicon_room2.zip` are present locally; first-pass extracted sequences are `MH_01_easy`, `MH_03_medium`, and `V1_02_medium` |
 | ETH3D | dataset | official ETH3D page | direct download into `datasets/eth3d` | first-pass-ready | `courtyard`, `delivery_area`, and `electro` archives are present locally and extracted into scene folders |
-| ORB-SLAM3 | method | `UZ-SLAMLab/ORB_SLAM3` | Docker first, host build second | pending | supports EuRoC mono and mono-inertial |
-| DSO | method | `JakobEngel/dso` | Docker first, host build second | pending | legacy dependency stack |
-| SVO Pro Open | method | `uzh-rpg/rpg_svo_pro_open` | Docker or ROS workspace | pending | replace older open SVO clone to keep the workspace clean |
+| SVO Pro Open | method | `uzh-rpg/rpg_svo_pro_open` | Docker or ROS workspace | active-next | now the only active odometry method priority; workspace helper scripts added for the Noetic container flow |
 | Depth Anything 3 | method | `ByteDance-Seed/Depth-Anything-3` | dedicated Python `venv` | pending | likely GPU-heavy |
 | LiteVGGT | method | `facebookresearch/vggt` or lighter official checkpoint in same codebase | dedicated Python `venv` | installed-minimal | minimal base environment created in `environment/venv/.venvs/litevggt`; demo and COLMAP extras intentionally skipped for now to keep storage and dependency load down |
 | MapAnything | method | `facebookresearch/map-anything` | dedicated Python `venv` | pending | flexible metric geometry baseline |

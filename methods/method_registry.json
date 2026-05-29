@@ -1,31 +1,13 @@
 {
   "methods": [
     {
-      "name": "orb_slam3",
-      "display_name": "ORB-SLAM3",
-      "type": "cpp_slam",
-      "clone_url": "https://github.com/UZ-SLAMLab/ORB_SLAM3.git",
-      "target_dir": "methods/orb_slam3/upstream",
-      "environment_strategy": "docker",
-      "notes": "Primary classical baseline with mono and mono-inertial EuRoC support."
-    },
-    {
-      "name": "dso",
-      "display_name": "DSO",
-      "type": "cpp_odometry",
-      "clone_url": "https://github.com/JakobEngel/dso.git",
-      "target_dir": "methods/dso/upstream",
-      "environment_strategy": "docker",
-      "notes": "Direct monocular odometry baseline."
-    },
-    {
       "name": "svo",
       "display_name": "SVO Pro Open",
       "type": "cpp_odometry",
       "clone_url": "https://github.com/uzh-rpg/rpg_svo_pro_open.git",
       "target_dir": "methods/svo/upstream",
       "environment_strategy": "docker_or_ros",
-      "notes": "Semi-direct odometry baseline using the SVO Pro Open repository."
+      "notes": "Semi-direct odometry baseline using the SVO Pro Open repository. This is now the only active odometry method priority for the repo."
     },
     {
       "name": "depth_anything_3",
