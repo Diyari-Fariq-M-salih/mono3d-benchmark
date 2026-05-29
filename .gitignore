@@ -1,0 +1,48 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Local virtual environments
+.venv/
+venv/
+environment/venv/.venvs/
+
+# Downloaded datasets and extracted dataset contents
+datasets/euroc/*
+datasets/eth3d/*
+datasets/redwood/*
+datasets/tum_rgbd/*
+datasets/tartanair/*
+!datasets/euroc/.gitkeep
+!datasets/eth3d/.gitkeep
+!datasets/redwood/.gitkeep
+!datasets/tum_rgbd/.gitkeep
+!datasets/tartanair/.gitkeep
+!datasets/dataset_registry.json
+!datasets/download_manifest.json
+
+# Cloned upstream method repositories
+methods/*/upstream/
+
+# Generated outputs
+outputs/trajectories/**
+outputs/reconstructions/**
+outputs/logs/**
+outputs/metrics/**
+outputs/screenshots_for_qualitative_appendix/**
+!outputs/logs/.gitkeep
+!outputs/metrics/.gitkeep
+!outputs/screenshots_for_qualitative_appendix/.gitkeep
+
+# Local notes that may be machine-specific
+reports/pc_specs.txt
+
+# Archive files
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz

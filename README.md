@@ -142,6 +142,23 @@ This repository currently contains:
 
 - project scaffolding
 - starter wrapper and evaluation scripts
+- installation registry and environment bootstrap helpers
 - the comparative-study handoff document
 
-The next practical step is to wire the first real odometry method into `wrappers/run_orb_slam3.py` and standardize EuRoC input preparation.
+Current hardware notes from `reports/pc_specs.txt`:
+
+- system memory: about `31 GiB`
+- GPU: `NVIDIA GeForce RTX 4070`
+- GPU memory: about `12 GiB`
+
+Because of that constraint, the benchmark should prefer `LiteVGGT`-style setups and smaller checkpoints over full-size `VGGT` defaults when possible.
+
+Environment strategy for reproducibility:
+
+- keep installs scripted and registry-driven
+- prefer minimal dependency installs before optional extras
+- avoid duplicate dataset copies
+- use isolated environments when needed, but avoid unnecessary heavyweight extras
+- prefer method-specific repos that are actively aligned with the intended benchmark setup
+
+The next practical step is to finish downloading datasets, stage method-specific environments, and then wire the first real odometry method into `wrappers/run_orb_slam3.py`.
