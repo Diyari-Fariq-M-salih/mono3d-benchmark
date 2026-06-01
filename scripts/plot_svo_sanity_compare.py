@@ -93,11 +93,69 @@ def write_csv(rows: list[dict[str, object]], out_path: Path) -> None:
         "failure_updates",
         "relocalization_frames",
         "paused_frames",
+        "gpu_samples",
+        "gpu_mean_util_percent",
+        "gpu_peak_util_percent",
+        "gpu_mean_mem_used_mb",
+        "gpu_peak_mem_used_mb",
+        "gpu_mean_power_w",
+        "gpu_peak_power_w",
+        "gpu_mean_temp_c",
+        "gpu_peak_temp_c",
     ]
     with out_path.open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
+
+
+def load_gpu_stats(trace_dir: str | Path) -> dict[str, float | int] | None:
+    trace_dir = normalize_trace_dir(trace_dir)
+    gpu_log = trace_dir / "log_gpu_usage.txt"
+    if not gpu_log.exists():
+        return None
+
+    text = gpu_log.read_text(encoding="utf-8").strip()
+    if not text:
+        return None
+    lowered = text.lower()
+    if "skipped" in lowered or "no gpu samples" in lowered:
+        return None
+
+    rows: list[list[float]] = []
+    for line in text.splitlines():
+        stripped = line.strip()
+        if not stripped:
+            continue
+        if stripped.startswith("gpu_index"):
+            continue
+        parts = stripped.split()
+        if len(parts) != 7:
+            continue
+        try:
+            rows.append([float(value) for value in parts])
+        except ValueError:
+            continue
+
+    if not rows:
+        return None
+
+    gpu_utils = [row[1] for row in rows]
+    mem_used = [row[3] for row in rows]
+    temps = [row[5] for row in rows]
+    powers = [row[6] for row in rows]
+
+    return {
+        "gpu_samples": len(rows),
+        "gpu_mean_util_percent": sum(gpu_utils) / len(gpu_utils),
+        "gpu_peak_util_percent": max(gpu_utils),
+        "gpu_mean_mem_used_mb": sum(mem_used) / len(mem_used),
+        "gpu_peak_mem_used_mb": max(mem_used),
+        "gpu_mean_power_w": sum(powers) / len(powers),
+        "gpu_peak_power_w": max(powers),
+        "gpu_mean_temp_c": sum(temps) / len(temps),
+        "gpu_peak_temp_c": max(temps),
+    }
 
 
 def load_pose_series(trace_dir: Path) -> tuple[object, object]:
@@ -202,6 +260,40 @@ def plot_scale_ratio(
     plt.close(fig)
 
 
+def plot_optional_gpu_metric(
+    plt,
+    sequences: list[str],
+    mono_values: list[float | None],
+    mono_imu_values: list[float | None],
+    ylabel: str,
+    title: str,
+    out_path: Path,
+) -> bool:
+    filtered_sequences: list[str] = []
+    filtered_mono: list[float] = []
+    filtered_mono_imu: list[float] = []
+    for sequence, mono_value, mono_imu_value in zip(sequences, mono_values, mono_imu_values):
+        if mono_value is None and mono_imu_value is None:
+            continue
+        filtered_sequences.append(sequence)
+        filtered_mono.append(float(0.0 if mono_value is None else mono_value))
+        filtered_mono_imu.append(float(0.0 if mono_imu_value is None else mono_imu_value))
+
+    if not filtered_sequences:
+        return False
+
+    plot_grouped_bars(
+        plt,
+        filtered_sequences,
+        filtered_mono,
+        filtered_mono_imu,
+        ylabel=ylabel,
+        title=title,
+        out_path=out_path,
+    )
+    return True
+
+
 def plot_trajectory_views(
     plt,
     sequence: str,
@@ -268,6 +360,7 @@ def main() -> int:
     for mode_name, reports in [("mono", mono_reports), ("mono-imu", mono_imu_reports)]:
         for sequence in sequences:
             report = reports[sequence]
+            gpu_stats = load_gpu_stats(report["trace_dir"])
             rows.append(
                 {
                     "sequence": sequence,
@@ -283,6 +376,15 @@ def main() -> int:
                     "failure_updates": report["failure_updates"],
                     "relocalization_frames": report["relocalization_frames"],
                     "paused_frames": report["paused_frames"],
+                    "gpu_samples": "" if gpu_stats is None else gpu_stats["gpu_samples"],
+                    "gpu_mean_util_percent": "" if gpu_stats is None else gpu_stats["gpu_mean_util_percent"],
+                    "gpu_peak_util_percent": "" if gpu_stats is None else gpu_stats["gpu_peak_util_percent"],
+                    "gpu_mean_mem_used_mb": "" if gpu_stats is None else gpu_stats["gpu_mean_mem_used_mb"],
+                    "gpu_peak_mem_used_mb": "" if gpu_stats is None else gpu_stats["gpu_peak_mem_used_mb"],
+                    "gpu_mean_power_w": "" if gpu_stats is None else gpu_stats["gpu_mean_power_w"],
+                    "gpu_peak_power_w": "" if gpu_stats is None else gpu_stats["gpu_peak_power_w"],
+                    "gpu_mean_temp_c": "" if gpu_stats is None else gpu_stats["gpu_mean_temp_c"],
+                    "gpu_peak_temp_c": "" if gpu_stats is None else gpu_stats["gpu_peak_temp_c"],
                 }
             )
 
@@ -315,6 +417,8 @@ def main() -> int:
     mono_imu_sim3 = [mono_imu_reports[seq]["sim3"]["rmse_m"] for seq in sequences]
     mono_path_ratio = [mono_reports[seq]["scale_path"]["path_ratio_est_over_gt"] for seq in sequences]
     mono_imu_path_ratio = [mono_imu_reports[seq]["scale_path"]["path_ratio_est_over_gt"] for seq in sequences]
+    mono_gpu_stats = [load_gpu_stats(mono_reports[seq]["trace_dir"]) for seq in sequences]
+    mono_imu_gpu_stats = [load_gpu_stats(mono_imu_reports[seq]["trace_dir"]) for seq in sequences]
 
     plot_grouped_bars(
         plt,
@@ -360,6 +464,38 @@ def main() -> int:
         out_path=output_dir / "path_ratio.png",
     )
 
+    gpu_plots: list[str] = []
+    if plot_optional_gpu_metric(
+        plt,
+        sequences,
+        [None if stats is None else float(stats["gpu_mean_util_percent"]) for stats in mono_gpu_stats],
+        [None if stats is None else float(stats["gpu_mean_util_percent"]) for stats in mono_imu_gpu_stats],
+        ylabel="Mean GPU Utilization (%)",
+        title="Mean GPU Utilization: Mono vs Mono-IMU",
+        out_path=output_dir / "gpu_mean_util.png",
+    ):
+        gpu_plots.append(str(output_dir / "gpu_mean_util.png"))
+    if plot_optional_gpu_metric(
+        plt,
+        sequences,
+        [None if stats is None else float(stats["gpu_peak_mem_used_mb"]) for stats in mono_gpu_stats],
+        [None if stats is None else float(stats["gpu_peak_mem_used_mb"]) for stats in mono_imu_gpu_stats],
+        ylabel="Peak GPU Memory Used (MB)",
+        title="Peak GPU Memory Usage: Mono vs Mono-IMU",
+        out_path=output_dir / "gpu_peak_mem_used.png",
+    ):
+        gpu_plots.append(str(output_dir / "gpu_peak_mem_used.png"))
+    if plot_optional_gpu_metric(
+        plt,
+        sequences,
+        [None if stats is None else float(stats["gpu_mean_power_w"]) for stats in mono_gpu_stats],
+        [None if stats is None else float(stats["gpu_mean_power_w"]) for stats in mono_imu_gpu_stats],
+        ylabel="Mean GPU Power Draw (W)",
+        title="Mean GPU Power Draw: Mono vs Mono-IMU",
+        out_path=output_dir / "gpu_mean_power.png",
+    ):
+        gpu_plots.append(str(output_dir / "gpu_mean_power.png"))
+
     for sequence in sequences:
         mono_trace_dir = normalize_trace_dir(mono_reports[sequence]["trace_dir"])
         mono_imu_trace_dir = normalize_trace_dir(mono_imu_reports[sequence]["trace_dir"])
@@ -397,9 +533,11 @@ def main() -> int:
                     str(output_dir / "sim3_rmse.png"),
                     str(output_dir / "path_ratio.png"),
                 ]
+                + gpu_plots
                 + [str(output_dir / f"{sequence}_trajectory_top.png") for sequence in sequences]
                 + [str(output_dir / f"{sequence}_trajectory_side.png") for sequence in sequences],
                 "sequences": sequences,
+                "gpu_plot_count": len(gpu_plots),
             },
             indent=2,
         )
