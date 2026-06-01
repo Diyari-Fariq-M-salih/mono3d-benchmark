@@ -24,7 +24,7 @@ docker build -f environment/docker/svo.Dockerfile -t mono3d-benchmark/svo:noetic
 Open an interactive shell:
 
 ```bash
-docker run --rm -it -v "$PWD":/workspace mono3d-benchmark/svo:noetic bash
+docker run --rm -it --runtime=nvidia -e NVIDIA_VISIBLE_DEVICES=all -w /workspace -v "$PWD":/workspace mono3d-benchmark/svo:noetic bash
 ```
 
 ## Method-Specific Build Notes
@@ -39,11 +39,19 @@ Enter the ready-made SVO container:
 bash scripts/enter_svo_container.sh
 ```
 
+The helper enters the container at `/workspace` with NVIDIA runtime enabled for GPU logging.
+
 Then inside the container:
 
 ```bash
 bash scripts/setup_svo_workspace.sh
 bash scripts/build_svo.sh
+```
+
+For benchmark runs, verify GPU visibility first:
+
+```bash
+nvidia-smi
 ```
 
 This uses the local workspace at `environment/ros_ws/svo/`, symlinks the already-cloned

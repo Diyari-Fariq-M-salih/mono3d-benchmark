@@ -107,6 +107,7 @@ Run metadata should be recorded in machine-readable form under `outputs/logs/`.
 - `FPS`
 - runtime
 - memory usage
+- GPU usage when available
 
 ### Reconstruction
 
@@ -160,5 +161,9 @@ Environment strategy for reproducibility:
 Current implementation note:
 
 - `SVO Pro Open` is now the only active odometry method path.
+- The repo now contains a full EuRoC `mono` vs `mono-imu` SVO benchmark flow, including per-run sanity reports, comparison plots, and fresh GPU-logged runs.
 
-The next practical step is to stage the `SVO Pro Open` environment and wire the first real odometry method into `wrappers/run_svo.py`.
+Current evaluation entry points:
+
+- EuRoC runbook: [reports/evaluation/SVO_EuRoC_Runbook.md](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/SVO_EuRoC_Runbook.md)
+- latest GPU-aware full comparison bundle: [reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601)

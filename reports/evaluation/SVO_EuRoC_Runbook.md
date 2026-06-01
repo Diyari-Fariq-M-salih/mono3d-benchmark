@@ -8,6 +8,7 @@ This document explains how to repeat the full `SVO Pro Open` EuRoC odometry work
 - run `mono-imu`
 - generate sanity reports
 - generate comparison plots
+- record CPU, memory, and GPU usage when available
 - handle the one special-case sequence: `V2_03_difficult`
 
 This runbook assumes you are starting from the repo root:
@@ -94,15 +95,22 @@ Start the SVO container:
 bash scripts/enter_svo_container.sh
 ```
 
+The helper opens the container directly at `/workspace` and exposes the NVIDIA runtime.
+
 Inside the container:
 
 ```bash
-cd /workspace
 source /opt/ros/noetic/setup.bash
 source /workspace/environment/ros_ws/svo/devel/setup.bash
 ```
 
 If the workspace was already built, this is enough to run SVO.
+
+Verify GPU visibility before GPU-logged benchmark runs:
+
+```bash
+nvidia-smi
+```
 
 ## 5. Prepare SVO Benchmark Datasets
 
@@ -199,7 +207,7 @@ Each per-sequence trace folder contains files such as:
 
 ## 8. Automatic CPU, Memory, and GPU Logging
 
-Future runs now record:
+Current runs record:
 
 - CPU usage: `log_cpu_usage.txt`
 - memory usage: `log_memory_usage.txt`
@@ -215,7 +223,7 @@ If you want to recompute a sanity report manually for one trace:
 
 ```bash
 python3 evaluation/odometry/svo_sanity_report.py \
-  outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono/MH_01_easy
+  outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono/MH_01_easy
 ```
 
 This compares the estimated trajectory to ground truth and reports:
@@ -239,16 +247,16 @@ MPLBACKEND=Agg MPLCONFIGDIR=/tmp/mplconfig python3 scripts/plot_svo_sanity_compa
 
 ```bash
 MPLBACKEND=Agg MPLCONFIGDIR=/tmp/mplconfig python3 scripts/plot_svo_sanity_compare.py \
-  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono \
-  --mono-imu-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_081241_mono3d_euroc_mono_imu
+  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono \
+  --mono-imu-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu
 ```
 
 ### Write plots into a chosen folder
 
 ```bash
 MPLBACKEND=Agg MPLCONFIGDIR=/tmp/mplconfig python3 scripts/plot_svo_sanity_compare.py \
-  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono \
-  --mono-imu-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_081241_mono3d_euroc_mono_imu \
+  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono \
+  --mono-imu-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu \
   --output-dir reports/evaluation/my_compare_run
 ```
 
@@ -260,23 +268,26 @@ The comparison script creates:
 - `se3_rmse.png`
 - `sim3_rmse.png`
 - `path_ratio.png`
+- `gpu_mean_util.png` when GPU samples exist
+- `gpu_peak_mem_used.png` when GPU samples exist
+- `gpu_mean_power.png` when GPU samples exist
 - per-sequence top-view trajectory plots
 - per-sequence side-view trajectory plots
 
 ## 11. Full 11-Sequence Comparison
 
-The current full comparison bundle is here:
+The current GPU-aware full comparison bundle is here:
 
-[reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_20260601](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_20260601)
+[reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601)
 
 It uses:
 
 - `mono` from:
-  [outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono)
-- `mono-imu` from a merged directory:
-  [reports/evaluation/mono_imu_merged_20260601](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/mono_imu_merged_20260601)
+  [outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono)
+- `mono-imu` from:
+  [outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu)
 
-That merged directory exists because `V2_03_difficult` needed a later rerun after a sequence-specific fix.
+This bundle covers all 11 EuRoC sequences and includes the GPU comparison plots.
 
 ## 12. Special Case: `V2_03_difficult`
 
@@ -309,9 +320,9 @@ python3 scripts/prepare_svo_euroc.py --write-configs --sequence V2_03_difficult
 bash scripts/run_svo_euroc_batch.sh --mode mono-imu --sequence V2_03_difficult
 ```
 
-Latest successful `mono-imu` `V2_03_difficult` trace:
+Latest successful `mono-imu` `V2_03_difficult` trace in the fresh full run:
 
-[outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_084938_mono3d_euroc_mono_imu/V2_03_difficult](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_084938_mono3d_euroc_mono_imu/V2_03_difficult)
+[outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu/V2_03_difficult](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu/V2_03_difficult)
 
 ## 14. New EuRoC Datasets in the Future
 
@@ -326,9 +337,9 @@ Typical flow:
 
 ```bash
 bash scripts/enter_svo_container.sh
-cd /workspace
 source /opt/ros/noetic/setup.bash
 source /workspace/environment/ros_ws/svo/devel/setup.bash
+nvidia-smi
 python3 scripts/prepare_svo_euroc.py --write-configs
 bash scripts/run_svo_euroc_batch.sh --mode mono
 bash scripts/run_svo_euroc_batch.sh --mode mono-imu
@@ -375,12 +386,12 @@ Current ETH3D scenes:
 bash scripts/enter_svo_container.sh
 ```
 
-### Inside container: source workspace
+### Inside container: source workspace and verify GPU visibility
 
 ```bash
-cd /workspace
 source /opt/ros/noetic/setup.bash
 source /workspace/environment/ros_ws/svo/devel/setup.bash
+nvidia-smi
 ```
 
 ### Prepare all EuRoC sequences
@@ -405,9 +416,9 @@ bash scripts/run_svo_euroc_batch.sh --mode mono-imu
 
 ```bash
 MPLBACKEND=Agg MPLCONFIGDIR=/tmp/mplconfig python3 scripts/plot_svo_sanity_compare.py \
-  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_080900_mono3d_euroc_mono \
-  --mono-imu-dir reports/evaluation/mono_imu_merged_20260601 \
-  --output-dir reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_20260601
+  --mono-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono/20260601_094520_mono3d_euroc_mono \
+  --mono-imu-dir outputs/logs/svo_benchmarks/mono3d_euroc_mono_imu/20260601_095127_mono3d_euroc_mono_imu \
+  --output-dir reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601
 ```
 
 ## 18. Current Bottom Line

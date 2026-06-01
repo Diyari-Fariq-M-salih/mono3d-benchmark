@@ -50,7 +50,7 @@ This folder tracks how each dataset and method should be installed in a reproduc
 - ETH3D uses `.7z` archives and this machine now has `7z` available, so downloaded archives can be normalized into extracted scene folders immediately.
 - EuRoC is currently documented as a manual-download step in `scripts_downloading/euroc_manual_download.md`.
 - Current local state:
-- `datasets/euroc/` contains grouped `machine_hall.zip`, `vicon_room1.zip`, and `vicon_room2.zip` archives plus first-pass extracted sequences `MH_01_easy`, `MH_03_medium`, and `V1_02_medium`.
+- `datasets/euroc/` contains grouped `machine_hall.zip`, `vicon_room1.zip`, and `vicon_room2.zip` archives plus the full extracted 11-sequence EuRoC set from `MH_01_easy` through `V2_03_difficult`.
 - `datasets/eth3d/` contains `courtyard`, `delivery_area`, and `electro` archives and extracted scene folders.
 
 ## Deferred Items
@@ -63,6 +63,8 @@ This folder tracks how each dataset and method should be installed in a reproduc
 - `SVO Pro Open` is the only active odometry method for the current phase.
 - Use the container image `mono3d-benchmark/svo:noetic`.
 - Use `scripts/setup_svo_workspace.sh` and `scripts/build_svo.sh` inside that container for the reproducible workspace flow.
+- Use `scripts/enter_svo_container.sh` for interactive runs; it now starts the container with NVIDIA runtime access and opens at `/workspace`.
+- The current benchmarked EuRoC odometry sweep is a full 11-sequence `mono` vs `mono-imu` comparison with CPU, memory, and GPU logging enabled on fresh runs.
 
 ## Tracking
 
