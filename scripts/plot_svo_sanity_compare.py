@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import os
+import subprocess
 import sys
 from pathlib import Path
 
@@ -15,6 +16,14 @@ os.environ.setdefault("MPLBACKEND", "Agg")
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BENCH_ROOT = REPO_ROOT / "outputs" / "logs" / "svo_benchmarks"
+
+
+def normalize_trace_dir(path_value: str | Path) -> Path:
+    path = Path(path_value)
+    path_text = str(path)
+    if path_text.startswith("/workspace/"):
+        return REPO_ROOT / path_text[len("/workspace/"):]
+    return path.resolve() if path.is_absolute() else (REPO_ROOT / path).resolve()
 
 
 def parse_args() -> argparse.Namespace:
@@ -51,6 +60,18 @@ def load_reports(run_dir: Path) -> dict[str, dict]:
         report_path = seq_dir / "sanity_report.json"
         if report_path.exists():
             reports[seq_dir.name] = json.loads(report_path.read_text(encoding="utf-8"))
+            continue
+        status_path = seq_dir / "status.txt"
+        traj_path = seq_dir / "stamped_traj_estimate.txt"
+        gt_path = seq_dir / "stamped_groundtruth.txt"
+        if status_path.exists() and traj_path.exists() and gt_path.exists() and status_path.stat().st_size > 0 and traj_path.stat().st_size > 0:
+            result = subprocess.run(
+                ["python3", str(REPO_ROOT / "evaluation" / "odometry" / "svo_sanity_report.py"), str(seq_dir)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            reports[seq_dir.name] = json.loads(result.stdout)
     if not reports:
         raise FileNotFoundError(f"No sanity_report.json files found under {run_dir}")
     return reports
@@ -82,6 +103,7 @@ def write_csv(rows: list[dict[str, object]], out_path: Path) -> None:
 def load_pose_series(trace_dir: Path) -> tuple[object, object]:
     import numpy as np
 
+    trace_dir = normalize_trace_dir(trace_dir)
     gt = np.loadtxt(trace_dir / "stamped_groundtruth.txt")
     est = np.loadtxt(trace_dir / "stamped_traj_estimate.txt")
     return gt, est
@@ -140,11 +162,12 @@ def plot_grouped_bars(
 ) -> None:
     indices = list(range(len(sequences)))
     width = 0.38
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig_width = max(10, len(sequences) * 1.15)
+    fig, ax = plt.subplots(figsize=(fig_width, 5.8))
     ax.bar([i - width / 2 for i in indices], mono_values, width=width, label="mono", color="#b55d3d")
     ax.bar([i + width / 2 for i in indices], mono_imu_values, width=width, label="mono-imu", color="#2f7f6f")
     ax.set_xticks(indices)
-    ax.set_xticklabels(sequences)
+    ax.set_xticklabels(sequences, rotation=25, ha="right")
     ax.set_ylabel(ylabel)
     ax.set_title(title)
     ax.legend()
@@ -163,12 +186,13 @@ def plot_scale_ratio(
 ) -> None:
     indices = list(range(len(sequences)))
     width = 0.38
-    fig, ax = plt.subplots(figsize=(10, 5))
+    fig_width = max(10, len(sequences) * 1.15)
+    fig, ax = plt.subplots(figsize=(fig_width, 5.8))
     ax.bar([i - width / 2 for i in indices], mono_values, width=width, label="mono", color="#b55d3d")
     ax.bar([i + width / 2 for i in indices], mono_imu_values, width=width, label="mono-imu", color="#2f7f6f")
     ax.axhline(1.0, color="black", linestyle="--", linewidth=1, alpha=0.8)
     ax.set_xticks(indices)
-    ax.set_xticklabels(sequences)
+    ax.set_xticklabels(sequences, rotation=25, ha="right")
     ax.set_ylabel("Estimated / GT Path Ratio")
     ax.set_title("Metric Scale Consistency")
     ax.legend()
@@ -337,8 +361,8 @@ def main() -> int:
     )
 
     for sequence in sequences:
-        mono_trace_dir = Path(mono_reports[sequence]["trace_dir"])
-        mono_imu_trace_dir = Path(mono_imu_reports[sequence]["trace_dir"])
+        mono_trace_dir = normalize_trace_dir(mono_reports[sequence]["trace_dir"])
+        mono_imu_trace_dir = normalize_trace_dir(mono_imu_reports[sequence]["trace_dir"])
 
         gt_mono, est_mono = load_pose_series(mono_trace_dir)
         gt_match_mono, est_match_mono = time_match_positions(gt_mono, est_mono)
