@@ -24,39 +24,35 @@ This folder tracks how each dataset and method should be installed in a reproduc
 
 ## Hardware-Aware Decisions
 
-- Prefer `LiteVGGT` over full `VGGT` for the initial benchmark setup.
-- Keep batch size, frame count, and checkpoint size conservative for feed-forward 3D models.
-- Treat `MapAnything` and `Depth Anything 3` as installable, but expect reduced inference settings on this GPU.
-- Prefer a shared GPU Python base stack for heavy methods when dependency compatibility allows it, to avoid downloading and storing separate `torch` and CUDA wheels for every method venv.
+- Keep batch size, frame count, and checkpoint size conservative for `Depth Anything 3` and `DA3-Streaming`.
+- Prefer one clean Python environment for `Depth Anything 3` rather than maintaining multiple competing reconstruction stacks.
 - Use `SVO Pro Open` as the only active odometry method implementation path for the current phase.
 
 ## Planned Installation Order
 
 1. Benchmark utility venv
 2. EuRoC dataset
-3. ETH3D dataset
-4. SVO Pro Open
-5. Depth Anything 3
-6. LiteVGGT
-7. MapAnything
-8. STAC-3R or nearest available streaming baseline
+3. SVO Pro Open
+4. Depth Anything 3
+5. DA3-Streaming experiments in the same upstream repo
+6. ETH3D later if reconstruction evaluation needs it
 
 ## Dataset Download Policy
 
 - Use `scripts/download_datasets.py` with named presets from `datasets/download_manifest.json`.
 - For manual and repo-style download flows, use the explicit shell scripts in `scripts_downloading/`.
-- For now, prefer the first-pass preset rather than downloading every possible benchmark split immediately.
+- For now, prioritize `EuRoC`. `ETH3D` can stay deferred until the `SVO + DA3` pipeline is stable.
 - EuRoC archives can be extracted directly after download.
 - ETH3D uses `.7z` archives and this machine now has `7z` available, so downloaded archives can be normalized into extracted scene folders immediately.
 - EuRoC is currently documented as a manual-download step in `scripts_downloading/euroc_manual_download.md`.
-- Current local state:
-- `datasets/euroc/` contains grouped `machine_hall.zip`, `vicon_room1.zip`, and `vicon_room2.zip` archives plus the full extracted 11-sequence EuRoC set from `MH_01_easy` through `V2_03_difficult`.
-- `datasets/eth3d/` contains `courtyard`, `delivery_area`, and `electro` archives and extracted scene folders.
+- Current backup state:
+- `datasets/euroc/` needs to be restored on this machine.
+- `datasets/eth3d/` is intentionally deferred for now.
 
 ## Deferred Items
 
-- `STAC-3R` is cloned and documented, but it should be treated as a deferred install on this machine unless we intentionally budget time for reduced-setting experiments.
-- Reason: upstream targets heavier GPUs, requires an additional backbone, and includes optional CUDA extensions plus a comparatively heavy dependency stack.
+- `ETH3D` is deferred until the active `SVO + DA3` integration path is working.
+- Additional reconstruction baselines are intentionally removed from the active plan to keep the internship scope focused.
 
 ## Active Odometry Path
 

@@ -33,9 +33,6 @@ These tracks overlap, but they do not answer the same research question and shou
 
 - `Depth Anything 3`
 - `DA3-Streaming`
-- `LiteVGGT`
-- `MapAnything`
-- `STAC-3R`
 
 ## Datasets
 
@@ -51,12 +48,13 @@ Suggested first sequences:
 
 ### Reconstruction
 
-Primary benchmark: `ETH3D`
+Primary working method: `Depth Anything 3 / DA3-Streaming`
 
-Suggested first pass:
+Current dataset priority:
 
-- One small indoor scene
-- One larger indoor scene
+- monocular UAV image sequences
+- `EuRoC` for synchronized trajectory experiments alongside `SVO`
+- `ETH3D` is deferred for now
 
 ## First Milestone
 
@@ -147,7 +145,7 @@ Current hardware notes from `reports/pc_specs.txt`:
 - GPU: `NVIDIA GeForce RTX 4070`
 - GPU memory: about `12 GiB`
 
-Because of that constraint, the benchmark should prefer `LiteVGGT`-style setups and smaller checkpoints over full-size `VGGT` defaults when possible.
+Because of that constraint, the benchmark should prioritize `SVO` for lightweight odometry and use conservative `Depth Anything 3` / `DA3-Streaming` settings for dense mapping experiments.
 
 Environment strategy for reproducibility:
 
@@ -157,10 +155,12 @@ Environment strategy for reproducibility:
 - use isolated environments when needed, but avoid unnecessary heavyweight extras
 - prefer method-specific repos that are actively aligned with the intended benchmark setup
 - for classical C++ odometry, use `SVO Pro Open` in its own ROS-oriented environment
+- keep the reconstruction track focused on `Depth Anything 3`, especially the streaming pipeline
 
 Current implementation note:
 
 - `SVO Pro Open` is now the only active odometry method path.
+- `Depth Anything 3` is the only active reconstruction method path, with `DA3-Streaming` as the main dense mapping direction.
 - The repo now contains a full EuRoC `mono` vs `mono-imu` SVO benchmark flow, including per-run sanity reports, comparison plots, and fresh GPU-logged runs.
 
 Current evaluation entry points:

@@ -2,10 +2,8 @@
 
 | Item | Type | Source | Environment Strategy | Status | Notes |
 |---|---|---|---|---|---|
-| EuRoC MAV | dataset | official ETH ASL page | manual download into `datasets/euroc` | full-set-ready | grouped `machine_hall.zip`, `vicon_room1.zip`, and `vicon_room2.zip` are present locally; all 11 benchmark sequences are extracted and validated for the SVO workflow |
-| ETH3D | dataset | official ETH3D page | direct download into `datasets/eth3d` | first-pass-ready | `courtyard`, `delivery_area`, and `electro` archives are present locally and extracted into scene folders |
-| SVO Pro Open | method | `uzh-rpg/rpg_svo_pro_open` | Docker or ROS workspace | active-benchmarked | only active odometry method path; full 11-sequence EuRoC `mono` and `mono-imu` sweeps completed, with fresh CPU, memory, and GPU-logged runs plus comparison reports under `reports/evaluation/` |
-| Depth Anything 3 | method | `ByteDance-Seed/Depth-Anything-3` | dedicated Python `venv` | pending | likely GPU-heavy |
-| LiteVGGT | method | `facebookresearch/vggt` or lighter official checkpoint in same codebase | dedicated Python `venv` | installed-minimal | minimal base environment created in `environment/venv/.venvs/litevggt`; demo and COLMAP extras intentionally skipped for now to keep storage and dependency load down |
-| MapAnything | method | `facebookresearch/map-anything` | dedicated Python `venv` | pending | flexible metric geometry baseline |
-| STAC-3R | method | `Rainzor/STAC` | dedicated Python `venv` | deferred | official project page is `stac-3r.github.io`; upstream notes say it was tested on RTX 3090 24 GB and A100 40 GB, so treat it as a later-stage or reduced-setting experiment on this 12 GB GPU |
+| EuRoC MAV | dataset | official ETH ASL page | manual download into `datasets/euroc` | restore-needed | backup repo does not contain the local archives or extracted sequences, so the dataset must be restored before rerunning SVO |
+| ETH3D | dataset | official ETH3D page | direct download into `datasets/eth3d` | deferred | kept out of the active rebuild until the `SVO + DA3` path is stable |
+| SVO Pro Open | method | `uzh-rpg/rpg_svo_pro_open` | Docker or ROS workspace | restore-needed | only active odometry method path; repo automation is present, but the local upstream clone and ROS workspace are missing |
+| Depth Anything 3 | method | `ByteDance-Seed/Depth-Anything-3` | dedicated Python `venv` | restore-needed | primary reconstruction method path; upstream repo and local environment need to be rebuilt |
+| DA3-Streaming | method path inside `Depth-Anything-3` | same `Depth Anything 3` `venv` | restore-needed | main dense mapping direction for the project; official script does not directly accept external `SVO` poses, so local integration work is expected |

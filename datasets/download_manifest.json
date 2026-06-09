@@ -1,5 +1,115 @@
 {
   "datasets": {
+    "euroc_mh_01_easy": {
+      "target_dir": "datasets/euroc/MH_01_easy",
+      "archives": [
+        {
+          "filename": "MH_01_easy.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_01_easy/MH_01_easy.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_mh_02_easy": {
+      "target_dir": "datasets/euroc/MH_02_easy",
+      "archives": [
+        {
+          "filename": "MH_02_easy.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_02_easy/MH_02_easy.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_mh_03_medium": {
+      "target_dir": "datasets/euroc/MH_03_medium",
+      "archives": [
+        {
+          "filename": "MH_03_medium.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_03_medium/MH_03_medium.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_mh_04_difficult": {
+      "target_dir": "datasets/euroc/MH_04_difficult",
+      "archives": [
+        {
+          "filename": "MH_04_difficult.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_04_difficult/MH_04_difficult.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_mh_05_difficult": {
+      "target_dir": "datasets/euroc/MH_05_difficult",
+      "archives": [
+        {
+          "filename": "MH_05_difficult.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/machine_hall/MH_05_difficult/MH_05_difficult.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v1_01_easy": {
+      "target_dir": "datasets/euroc/V1_01_easy",
+      "archives": [
+        {
+          "filename": "V1_01_easy.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room1/V1_01_easy/V1_01_easy.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v1_02_medium": {
+      "target_dir": "datasets/euroc/V1_02_medium",
+      "archives": [
+        {
+          "filename": "V1_02_medium.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room1/V1_02_medium/V1_02_medium.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v1_03_difficult": {
+      "target_dir": "datasets/euroc/V1_03_difficult",
+      "archives": [
+        {
+          "filename": "V1_03_difficult.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room1/V1_03_difficult/V1_03_difficult.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v2_01_easy": {
+      "target_dir": "datasets/euroc/V2_01_easy",
+      "archives": [
+        {
+          "filename": "V2_01_easy.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room2/V2_01_easy/V2_01_easy.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v2_02_medium": {
+      "target_dir": "datasets/euroc/V2_02_medium",
+      "archives": [
+        {
+          "filename": "V2_02_medium.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room2/V2_02_medium/V2_02_medium.zip",
+          "extract": "zip"
+        }
+      ]
+    },
+    "euroc_v2_03_difficult": {
+      "target_dir": "datasets/euroc/V2_03_difficult",
+      "archives": [
+        {
+          "filename": "V2_03_difficult.zip",
+          "url": "http://robotics.ethz.ch/~asl-datasets/ijrr_euroc_mav_dataset/vicon_room2/V2_03_difficult/V2_03_difficult.zip",
+          "extract": "zip"
+        }
+      ]
+    },
     "eth3d_courtyard_hr": {
       "target_dir": "datasets/eth3d/high_res_multi_view/courtyard",
       "archives": [
@@ -47,6 +157,19 @@
     }
   },
   "presets": {
+    "euroc_full": [
+      "euroc_mh_01_easy",
+      "euroc_mh_02_easy",
+      "euroc_mh_03_medium",
+      "euroc_mh_04_difficult",
+      "euroc_mh_05_difficult",
+      "euroc_v1_01_easy",
+      "euroc_v1_02_medium",
+      "euroc_v1_03_difficult",
+      "euroc_v2_01_easy",
+      "euroc_v2_02_medium",
+      "euroc_v2_03_difficult"
+    ],
     "eth3d_first_pass": [
       "eth3d_courtyard_hr",
       "eth3d_delivery_area_hr",

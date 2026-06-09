@@ -57,3 +57,4 @@ reports/pc_specs.txt
 # Common extraction noise from manual dataset downloads
 .DS_Store
 __MACOSX/
+/datasets
