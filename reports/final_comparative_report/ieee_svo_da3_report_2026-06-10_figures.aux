@@ -1,0 +1,85 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{forster2017svo}
+\citation{lin2025depthanything3}
+\citation{mur2015orbslam}
+\citation{campos2021orbslam3}
+\citation{teed2021droidslam}
+\citation{teed2023dpvo}
+\citation{forster2017svo}
+\citation{tumrgbdformats}
+\citation{lin2025depthanything3}
+\@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {II}Experimental Setup}{1}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-A}}Classical Geometry Baseline: SVO}{1}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-B}}Learned Dense Baseline: DA3}{1}{subsection.2.2}\protected@file@percent }
+\citation{burri2016euroc}
+\citation{sturm2012tumrgbd}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-C}}Datasets}{2}{subsection.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {II-D}}Metrics}{2}{subsection.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {III}EuRoC Evidence: SVO Becomes Practical with IMU}{2}{section.3}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces EuRoC Sim(3) RMSE comparison for SVO mono and mono+IMU.}}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:euroc-sim3}{{1}{2}{EuRoC Sim(3) RMSE comparison for SVO mono and mono+IMU}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}TUM Evidence: DA3 Strongly Outperforms Monocular SVO}{2}{section.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-A}}Sequence-Level Results}{2}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-B}}Aggregate Result}{2}{subsection.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces EuRoC Sim(3) RMSE comparison across SVO mono, SVO mono+IMU, and DA3-LARGE through DA3-Streaming at 5\nobreakspace  {}fps with 30-frame chunks, 15-frame overlap, and loop enabled. Unlike the TUM case, DA3 does not approach the visual-inertial SVO trajectory quality here and is generally worse than even monocular SVO. This is the main evidence that the DA3 prior advantage is regime-dependent rather than universal.}}{3}{figure.2}\protected@file@percent }
+\newlabel{fig:euroc-svo-da3-sim3}{{2}{3}{EuRoC Sim(3) RMSE comparison across SVO mono, SVO mono+IMU, and DA3-LARGE through DA3-Streaming at 5~fps with 30-frame chunks, 15-frame overlap, and loop enabled. Unlike the TUM case, DA3 does not approach the visual-inertial SVO trajectory quality here and is generally worse than even monocular SVO. This is the main evidence that the DA3 prior advantage is regime-dependent rather than universal}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {I}{\ignorespaces TUM Sequence-Level Sim(3) RMSE Comparison}}{3}{table.1}\protected@file@percent }
+\newlabel{tab:sequence_results}{{I}{3}{TUM Sequence-Level Sim(3) RMSE Comparison}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {II}{\ignorespaces Best DA3 TUM Trajectory Variant per Sequence}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:da3best}{{II}{3}{Best DA3 TUM Trajectory Variant per Sequence}{table.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-C}}Best DA3 Variants Chosen}{3}{subsection.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {IV-D}}Non-IMU SVO Tuning Attempts}{3}{subsection.4.4}\protected@file@percent }
+\citation{lin2025depthanything3}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces TUM Sim(3) RMSE comparison between monocular SVO and the best DA3 run per sequence. This is the main sequence-level quantitative figure supporting the TUM claim.}}{4}{figure.3}\protected@file@percent }
+\newlabel{fig:tum-svo-da3-sim3}{{3}{4}{TUM Sim(3) RMSE comparison between monocular SVO and the best DA3 run per sequence. This is the main sequence-level quantitative figure supporting the TUM claim}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces TUM desk sequence top-down trajectory plot for DA3 after Sim(3) alignment. The sharper corners reflect the selected keyframe path, but the global loop structure remains close to ground truth.}}{4}{figure.4}\protected@file@percent }
+\newlabel{fig:tum-da3-desk-traj}{{4}{4}{TUM desk sequence top-down trajectory plot for DA3 after Sim(3) alignment. The sharper corners reflect the selected keyframe path, but the global loop structure remains close to ground truth}{figure.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {V}Why DA3 Wins in the Tested RGB-Only Monocular Setting}{4}{section.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces TUM desk sequence top-down trajectory plot for SVO after Sim(3) alignment. The SVO trajectory is visually smoother, but the accumulated drift is larger than in the DA3 estimate.}}{4}{figure.5}\protected@file@percent }
+\newlabel{fig:tum-svo-desk-traj}{{5}{4}{TUM desk sequence top-down trajectory plot for SVO after Sim(3) alignment. The SVO trajectory is visually smoother, but the accumulated drift is larger than in the DA3 estimate}{figure.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-A}}Learned Depth Priors}{4}{subsection.5.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Side-by-side qualitative DA3 reconstructions exported from CloudCompare across representative indoor and object-scale scenes. The examples show coherent recovered structure across desk, cabinet, teddy, hall, and catwalk scenes, complementing the quantitative trajectory results.}}{5}{figure.6}\protected@file@percent }
+\newlabel{fig:da3-reconstruction-examples}{{6}{5}{Side-by-side qualitative DA3 reconstructions exported from CloudCompare across representative indoor and object-scale scenes. The examples show coherent recovered structure across desk, cabinet, teddy, hall, and catwalk scenes, complementing the quantitative trajectory results}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-B}}TUM Is Unfavorable to Plain Monocular SVO in This Configuration}{5}{subsection.5.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {III}{\ignorespaces Additional non-IMU SVO variants attempted on TUM}}{5}{table.3}\protected@file@percent }
+\newlabel{tab:svo-variants}{{III}{5}{Additional non-IMU SVO variants attempted on TUM}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {V-C}}Caveat: The DA3 Side Is Best-of-N}{5}{subsection.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VI}Implications for Pipeline Design}{5}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-A}}When DA3 Should Be Preferred}{5}{subsection.6.1}\protected@file@percent }
+\bibstyle{IEEEtran}
+\bibdata{ieee_svo_da3_refs_2026-06-10}
+\bibcite{forster2017svo}{1}
+\bibcite{lin2025depthanything3}{2}
+\bibcite{mur2015orbslam}{3}
+\bibcite{campos2021orbslam3}{4}
+\bibcite{teed2021droidslam}{5}
+\bibcite{teed2023dpvo}{6}
+\bibcite{tumrgbdformats}{7}
+\bibcite{burri2016euroc}{8}
+\bibcite{sturm2012tumrgbd}{9}
+\@writefile{toc}{\contentsline {subsection}{\numberline {\mbox  {VI-B}}When SVO Still Adds Value}{6}{subsection.6.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-B}1}Geometric Anchor}{6}{subsubsection.6.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-B}2}Interpretability}{6}{subsubsection.6.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-B}3}Cross-Validation}{6}{subsubsection.6.2.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {\mbox  {VI-B}4}Generalization and Domain Shift Analysis}{6}{subsubsection.6.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {VII}Conclusion}{6}{section.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{References}{6}{section*.2}\protected@file@percent }
+\gdef \@abspage@last{6}

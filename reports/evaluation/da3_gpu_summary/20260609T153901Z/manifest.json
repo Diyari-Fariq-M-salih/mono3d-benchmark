@@ -1,0 +1,15 @@
+{
+  "created_utc": "2026-06-09T15:39:04.002779+00:00",
+  "runs_root": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs",
+  "run_count": 66,
+  "scene_count": 7,
+  "plots": [
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/scene_heatmaps_mean_util.png",
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/scene_heatmaps_mean_power.png",
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/scene_heatmaps_peak_mem.png",
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/scene_heatmaps_runtime.png",
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/runtime_vs_peak_mem_scatter.png",
+    "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/chunk_overlap_aggregate_bars.png"
+  ],
+  "summary_csv": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/da3_gpu_summary/20260609T153901Z/summary.csv"
+}

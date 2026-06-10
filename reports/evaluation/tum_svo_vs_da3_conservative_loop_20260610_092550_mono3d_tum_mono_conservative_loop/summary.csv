@@ -1,0 +1,7 @@
+sequence,svo_status,svo_tracking_ratio,svo_trajectory_ratio,svo_se3_rmse_m,svo_sim3_rmse_m,svo_sim3_scale,svo_path_ratio_est_over_gt,da3_run_name,da3_match_count,da3_se3_rmse_m,da3_sim3_rmse_m,da3_sim3_scale,da3_path_ratio_est_over_gt,winner_by_sim3
+freiburg1_desk,empty_estimate,0.0,0.0,,,,,freiburg1_desk__fps2__chunk30__overlap15__loop,40,0.20919840485176255,0.02031865029355837,1.3121800313611391,0.7577252324792291,DA3
+freiburg1_room,empty_estimate,0.0,0.0,,,,,freiburg1_room__fps3__chunk30__overlap15__loop,130,0.46227053989717404,0.08321338580122875,1.8136952757884726,0.581060238554277,DA3
+freiburg1_xyz,empty_estimate,0.0,0.0,,,,,freiburg1_xyz__fps2__chunk30__overlap15__loop,52,0.055788904664054784,0.01070286086033377,1.4186829069285558,0.7063606410871872,DA3
+freiburg3_cabinet,empty_estimate,0.0,0.0,,,,,freiburg3_cabinet__fps2__chunk30__overlap15__loop,75,0.3066574497576749,0.014729647930249796,1.3159263526881104,0.7617772721788624,DA3
+freiburg3_large_cabinet,empty_estimate,0.0,0.0,,,,,freiburg3_large_cabinet__fps2__chunk30__overlap15__loop,67,1.6949058961059607,0.03026334355854789,3.7380390310681926,0.2672141116239525,DA3
+freiburg3_teddy,empty_estimate,0.0,0.0,,,,,freiburg3_teddy__fps3__chunk30__overlap15__loop,230,0.04508696431110323,0.026436242919577878,0.9554846659166959,1.0508111727719842,DA3

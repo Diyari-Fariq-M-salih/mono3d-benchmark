@@ -1,0 +1,3 @@
+variant,report_dir,sequence_count,comparable_sequence_count,svo_mean_sim3_rmse_m,da3_mean_sim3_rmse_m,mean_sim3_ratio_svo_over_da3,svo_win_count,da3_win_count
+20260610_080434_mono3d_tum_mono,/workspace/reports/evaluation/tum_svo_vs_da3_20260610_080434_mono3d_tum_mono,6,5,0.48144267239408733,0.03418689668664933,14.082666724824438,0,6
+baseline,/workspace/reports/evaluation/tum_svo_vs_da3_baseline_20260610_091041_mono3d_tum_mono,6,5,0.42850737256538557,0.03418689668664933,12.534257686300212,0,6

@@ -107,6 +107,50 @@ def error_stats(err: np.ndarray) -> dict[str, float]:
     }
 
 
+def empty_report(trace_dir: Path, counts: dict[str, int], reason: str) -> dict[str, object]:
+    return {
+        "trace_dir": str(trace_dir),
+        "status": reason,
+        **counts,
+        "tracking_ratio": counts["tracking_frames"] / counts["frames_total"] if counts["frames_total"] else 0.0,
+        "trajectory_rows": 0,
+        "trajectory_ratio": 0.0,
+        "timestamp_match": {
+            "matched_rows": 0,
+            "median_abs_dt_s": None,
+            "max_abs_dt_s": None,
+        },
+        "se3": {
+            "rmse_m": None,
+            "mean_m": None,
+            "median_m": None,
+            "p90_m": None,
+            "max_m": None,
+        },
+        "sim3": {
+            "rmse_m": None,
+            "mean_m": None,
+            "median_m": None,
+            "p90_m": None,
+            "max_m": None,
+        },
+        "scale_path": {
+            "sim3_scale": None,
+            "est_path_m": 0.0,
+            "gt_path_m": 0.0,
+            "path_ratio_est_over_gt": None,
+        },
+    }
+
+
+def finalize(report: dict[str, object], json_out: Path | None) -> int:
+    print(json.dumps(report, indent=2))
+    if json_out:
+        json_out.parent.mkdir(parents=True, exist_ok=True)
+        json_out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    return 0
+
+
 def main() -> int:
     args = parse_args()
     trace_dir = args.trace_dir.resolve()
@@ -117,7 +161,17 @@ def main() -> int:
 
     counts = load_status_counts(status_path)
     gt = np.loadtxt(gt_path)
+    if gt.ndim == 1:
+        gt = gt.reshape(1, -1)
+
+    if not est_path.exists() or est_path.stat().st_size == 0:
+        return finalize(empty_report(trace_dir, counts, "empty_estimate"), args.json_out)
+
     est = np.loadtxt(est_path)
+    if est.size == 0:
+        return finalize(empty_report(trace_dir, counts, "empty_estimate"), args.json_out)
+    if est.ndim == 1:
+        est = est.reshape(1, -1)
 
     gt_t = gt[:, 0]
     gt_p = gt[:, 1:4]
@@ -140,6 +194,17 @@ def main() -> int:
     matched_gt_p = matched_gt_p[time_mask]
     time_err = time_err[time_mask]
 
+    if len(est_p) < 2 or len(matched_gt_p) < 2:
+        report = empty_report(trace_dir, counts, "insufficient_matches")
+        report["trajectory_rows"] = int(est.shape[0])
+        report["trajectory_ratio"] = est.shape[0] / counts["frames_total"] if counts["frames_total"] else 0.0
+        report["timestamp_match"] = {
+            "matched_rows": int(len(est_t)),
+            "median_abs_dt_s": None if len(time_err) == 0 else float(np.median(time_err)),
+            "max_abs_dt_s": None if len(time_err) == 0 else float(np.max(time_err)),
+        }
+        return finalize(report, args.json_out)
+
     rot_se3, trans_se3 = rigid_align(est_p, matched_gt_p)
     aligned_se3 = (rot_se3 @ est_p.T).T + trans_se3
     err_se3 = np.linalg.norm(aligned_se3 - matched_gt_p, axis=1)
@@ -153,6 +218,7 @@ def main() -> int:
 
     report = {
         "trace_dir": str(trace_dir),
+        "status": "ok",
         **counts,
         "tracking_ratio": counts["tracking_frames"] / counts["frames_total"] if counts["frames_total"] else 0.0,
         "trajectory_rows": int(est.shape[0]),
@@ -172,11 +238,7 @@ def main() -> int:
         },
     }
 
-    print(json.dumps(report, indent=2))
-    if args.json_out:
-        args.json_out.parent.mkdir(parents=True, exist_ok=True)
-        args.json_out.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    return 0
+    return finalize(report, args.json_out)
 
 
 if __name__ == "__main__":

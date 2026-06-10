@@ -1,0 +1,7 @@
+sequence,tracking_ratio,trajectory_ratio,se3_rmse_m,sim3_rmse_m,sim3_scale,path_ratio_est_over_gt,tracking_frames,frames_total,failure_updates,relocalization_frames,paused_frames,gpu_samples,gpu_mean_util_percent,gpu_peak_util_percent,gpu_mean_mem_used_mb,gpu_peak_mem_used_mb,gpu_mean_power_w,gpu_peak_power_w,gpu_mean_temp_c,gpu_peak_temp_c
+freiburg1_desk,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
+freiburg1_room,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
+freiburg1_xyz,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
+freiburg3_cabinet,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
+freiburg3_large_cabinet,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
+freiburg3_teddy,0.0,0.0,,,,,0,0,0,0,0,,,,,,,,,
