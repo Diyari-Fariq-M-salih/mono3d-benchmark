@@ -1,0 +1,488 @@
+{
+  "bookstore": {
+    "sequence": "bookstore",
+    "fps": "5",
+    "fps_token": "5",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/bookstore/20260612T095032Z_fps5_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/bookstore_fps5",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/bookstore",
+      "match_count": 1456,
+      "se3": {
+        "rmse_m": 4.45219779244241,
+        "mean_m": 3.97286690980344,
+        "median_m": 3.921422278057563,
+        "p90_m": 6.823005379946032,
+        "max_m": 7.706993901611984
+      },
+      "sim3": {
+        "rmse_m": 1.6751358871026258,
+        "mean_m": 1.304655095753281,
+        "median_m": 0.9208778365638168,
+        "p90_m": 2.7568200667046385,
+        "max_m": 5.164636258150072
+      },
+      "sim3_scale": 1.7277152688672588,
+      "path_length_est_m": 81.69617765474524,
+      "path_length_gt_m": 156.9382745520433,
+      "path_ratio_est_over_gt": 0.520562481573948,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              -0.7284080571593575,
+              0.02787472768555673,
+              0.6845762936457749
+            ],
+            [
+              -0.6840951576586245,
+              0.025664325693204,
+              -0.7289411208422357
+            ],
+            [
+              -0.03788822420425342,
+              -0.9992819131472205,
+              0.0003748646142504173
+            ]
+          ],
+          "translation": [
+            -0.05139361394998754,
+            -1.6913036464398947,
+            -0.17800539777001376
+          ]
+        },
+        "sim3": {
+          "scale": 1.7277152688672588,
+          "rotation": [
+            [
+              -0.7284080571593575,
+              0.02787472768555673,
+              0.6845762936457749
+            ],
+            [
+              -0.6840951576586245,
+              0.025664325693204,
+              -0.7289411208422357
+            ],
+            [
+              -0.03788822420425342,
+              -0.9992819131472205,
+              0.0003748646142504173
+            ]
+          ],
+          "translation": [
+            0.9529760156780793,
+            -3.037065729954241,
+            -0.30754480132382267
+          ]
+        }
+      }
+    }
+  },
+  "office0": {
+    "sequence": "office0",
+    "fps": "2",
+    "fps_token": "2",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/office0/20260612T095032Z_fps2_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/office0_fps2",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/office0",
+      "match_count": 390,
+      "se3": {
+        "rmse_m": 5.282591922245769,
+        "mean_m": 5.149371306626487,
+        "median_m": 4.9909653933840294,
+        "p90_m": 6.886987562164539,
+        "max_m": 8.665831265227645
+      },
+      "sim3": {
+        "rmse_m": 0.6633208013895225,
+        "mean_m": 0.582800630351738,
+        "median_m": 0.5721937486256258,
+        "p90_m": 0.9620167930608051,
+        "max_m": 1.1026619717367667
+      },
+      "sim3_scale": 4.515289414623246,
+      "path_length_est_m": 22.119019202095537,
+      "path_length_gt_m": 99.72857206343275,
+      "path_ratio_est_over_gt": 0.2217921980074742,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              -0.0418512919474291,
+              -0.0026967936028470503,
+              0.9991202113192357
+            ],
+            [
+              -0.9990945027368553,
+              -0.007551662169928547,
+              -0.041870598269757
+            ],
+            [
+              0.007657934664591781,
+              -0.9999678493345348,
+              -0.0023783048454581604
+            ]
+          ],
+          "translation": [
+            1.7908206680275631,
+            -3.9680840203778494,
+            -0.029670237481847134
+          ]
+        },
+        "sim3": {
+          "scale": 4.515289414623246,
+          "rotation": [
+            [
+              -0.0418512919474291,
+              -0.0026967936028470503,
+              0.9991202113192357
+            ],
+            [
+              -0.9990945027368553,
+              -0.007551662169928547,
+              -0.041870598269757
+            ],
+            [
+              0.007657934664591781,
+              -0.9999678493345348,
+              -0.0023783048454581604
+            ]
+          ],
+          "translation": [
+            0.6287334949073826,
+            -0.8498718277049342,
+            -0.16685313253129386
+          ]
+        }
+      }
+    }
+  },
+  "office1": {
+    "sequence": "office1",
+    "fps": "2",
+    "fps_token": "2",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/office1/20260612T095032Z_fps2_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/office1_fps2",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/office1",
+      "match_count": 412,
+      "se3": {
+        "rmse_m": 5.343590914421878,
+        "mean_m": 5.048227252247439,
+        "median_m": 5.587703556776654,
+        "p90_m": 7.08527616165724,
+        "max_m": 8.423343469200617
+      },
+      "sim3": {
+        "rmse_m": 0.6581131899665679,
+        "mean_m": 0.5497518491487398,
+        "median_m": 0.4540604740670827,
+        "p90_m": 0.860973127254123,
+        "max_m": 1.973804000514131
+      },
+      "sim3_scale": 3.3566283428661228,
+      "path_length_est_m": 37.08385769947746,
+      "path_length_gt_m": 113.6042292329257,
+      "path_ratio_est_over_gt": 0.3264302566011294,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.6869964933614744,
+              -0.023127568455278226,
+              0.7262925950926279
+            ],
+            [
+              -0.726576617367956,
+              -0.006655412545492927,
+              0.6870532181556154
+            ],
+            [
+              -0.011056093486235125,
+              -0.9997103685874201,
+              -0.02137619553680964
+            ]
+          ],
+          "translation": [
+            2.1669427038644535,
+            -3.183263509492039,
+            0.008855404271414943
+          ]
+        },
+        "sim3": {
+          "scale": 3.3566283428661228,
+          "rotation": [
+            [
+              0.6869964933614744,
+              -0.023127568455278226,
+              0.7262925950926279
+            ],
+            [
+              -0.726576617367956,
+              -0.006655412545492927,
+              0.6870532181556154
+            ],
+            [
+              -0.011056093486235125,
+              -0.9997103685874201,
+              -0.02137619553680964
+            ]
+          ],
+          "translation": [
+            2.2855278473545537,
+            1.4768651643502135,
+            0.007685387261127129
+          ]
+        }
+      }
+    }
+  },
+  "office2": {
+    "sequence": "office2",
+    "fps": "3",
+    "fps_token": "3",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/office2/20260612T095032Z_fps3_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/office2_fps3",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/office2",
+      "match_count": 510,
+      "se3": {
+        "rmse_m": 2.3674254624964726,
+        "mean_m": 2.108562773444179,
+        "median_m": 2.5236699631121207,
+        "p90_m": 3.2545652221361565,
+        "max_m": 3.9184036423815143
+      },
+      "sim3": {
+        "rmse_m": 0.2298219152906338,
+        "mean_m": 0.20851382965907211,
+        "median_m": 0.18105285795890352,
+        "p90_m": 0.3341768553713301,
+        "max_m": 0.5880528964289519
+      },
+      "sim3_scale": 2.519991602771001,
+      "path_length_est_m": 26.828197771746186,
+      "path_length_gt_m": 67.4436339680203,
+      "path_ratio_est_over_gt": 0.39778695472529396,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.24325944995872809,
+              0.009333977911904521,
+              0.9699163452907246
+            ],
+            [
+              -0.9699112371519165,
+              0.01249584962721588,
+              0.2431379151603717
+            ],
+            [
+              -0.00985048487207821,
+              -0.9998783579008171,
+              0.01209286357116782
+            ]
+          ],
+          "translation": [
+            -0.9025789561168984,
+            0.2249376567505865,
+            0.01796827291622374
+          ]
+        },
+        "sim3": {
+          "scale": 2.519991602771001,
+          "rotation": [
+            [
+              0.24325944995872809,
+              0.009333977911904521,
+              0.9699163452907246
+            ],
+            [
+              -0.9699112371519165,
+              0.01249584962721588,
+              0.2431379151603717
+            ],
+            [
+              -0.00985048487207821,
+              -0.9998783579008171,
+              0.01209286357116782
+            ]
+          ],
+          "translation": [
+            -0.6617731527714588,
+            -0.011102548743617657,
+            0.04281796050542185
+          ]
+        }
+      }
+    }
+  },
+  "warehouse1": {
+    "sequence": "warehouse1",
+    "fps": "2",
+    "fps_token": "2",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/warehouse1/20260612T095032Z_fps2_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/warehouse1_fps2",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/warehouse1",
+      "match_count": 1748,
+      "se3": {
+        "rmse_m": 20.567358113215466,
+        "mean_m": 19.10994883827024,
+        "median_m": 18.510244091897405,
+        "p90_m": 29.99292279477421,
+        "max_m": 33.96504185548912
+      },
+      "sim3": {
+        "rmse_m": 18.203475389986412,
+        "mean_m": 16.74835611618376,
+        "median_m": 16.41685718902511,
+        "p90_m": 26.071067737648843,
+        "max_m": 36.117167748830575
+      },
+      "sim3_scale": 9.637610138441318,
+      "path_length_est_m": 17.41877245588695,
+      "path_length_gt_m": 469.8193137762431,
+      "path_ratio_est_over_gt": 0.037075471239955964,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.9334719519397352,
+              -0.06155159107183474,
+              0.3533291901022981
+            ],
+            [
+              -0.35109407008379245,
+              0.044333688110359246,
+              0.9352900502253458
+            ],
+            [
+              -0.07323297681930738,
+              -0.9971188122460929,
+              0.019773855747521038
+            ]
+          ],
+          "translation": [
+            15.674076380945827,
+            24.697808247750356,
+            -0.20270910223320865
+          ]
+        },
+        "sim3": {
+          "scale": 9.637610138441318,
+          "rotation": [
+            [
+              0.9334719519397352,
+              -0.06155159107183474,
+              0.3533291901022981
+            ],
+            [
+              -0.35109407008379245,
+              0.044333688110359246,
+              0.9352900502253458
+            ],
+            [
+              -0.07323297681930738,
+              -0.9971188122460929,
+              0.019773855747521038
+            ]
+          ],
+          "translation": [
+            20.159732860147493,
+            -6.067852306099375,
+            -1.2591700033643622
+          ]
+        }
+      }
+    }
+  },
+  "warehouse2": {
+    "sequence": "warehouse2",
+    "fps": "3",
+    "fps_token": "3",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/qcar_evry/warehouse2/20260612T112908Z_fps3_da3_streaming",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/qcar_evry_prepared/warehouse2_fps3",
+      "qcar_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/Qcar_evry/warehouse2",
+      "match_count": 624,
+      "se3": {
+        "rmse_m": 5.194598176311807,
+        "mean_m": 4.604646803928137,
+        "median_m": 4.222754798183553,
+        "p90_m": 8.18775141131091,
+        "max_m": 10.14327709269632
+      },
+      "sim3": {
+        "rmse_m": 0.7843762629163162,
+        "mean_m": 0.5938744042047269,
+        "median_m": 0.4066565964489448,
+        "p90_m": 1.4077252656233075,
+        "max_m": 2.1889421579691053
+      },
+      "sim3_scale": 4.103105105934016,
+      "path_length_est_m": 30.096220609612683,
+      "path_length_gt_m": 131.1457976817029,
+      "path_ratio_est_over_gt": 0.22948673264131303,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.11093257334155117,
+              0.0024579984015901113,
+              0.9938248952484935
+            ],
+            [
+              -0.9935684371730858,
+              0.023124835049629918,
+              0.1108467530302911
+            ],
+            [
+              -0.022709575629067242,
+              -0.9997295635559575,
+              0.005007487090596137
+            ]
+          ],
+          "translation": [
+            0.2622230444565149,
+            1.6990234363413497,
+            0.012365606651191205
+          ]
+        },
+        "sim3": {
+          "scale": 4.103105105934016,
+          "rotation": [
+            [
+              0.11093257334155117,
+              0.0024579984015901113,
+              0.9938248952484935
+            ],
+            [
+              -0.9935684371730858,
+              0.023124835049629918,
+              0.1108467530302911
+            ],
+            [
+              -0.022709575629067242,
+              -0.9997295635559575,
+              0.005007487090596137
+            ]
+          ],
+          "translation": [
+            0.37010723634595977,
+            0.23035860652717033,
+            -0.013961765892192855
+          ]
+        }
+      }
+    }
+  }
+}
