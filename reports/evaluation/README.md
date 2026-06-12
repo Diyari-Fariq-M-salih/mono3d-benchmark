@@ -16,6 +16,17 @@ Canonical current folders kept at top level:
 
 Archived exploratory or superseded folders live under `archive/`.
 
+TUM note:
+
+- only the baseline TUM folders are intended to remain at top level
+- older reruns and non-canonical variant folders belong under `archive/tum/`
+- if they are stuck at top level with `nobody:nogroup` ownership, run:
+
+```bash
+sudo chown -R qcar:qcar reports/evaluation
+bash scripts/fix_reports_evaluation_layout.sh
+```
+
 Supporting docs:
 
 - `SVO_EuRoC_Runbook.md`

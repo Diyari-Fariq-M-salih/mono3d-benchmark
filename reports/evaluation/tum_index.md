@@ -22,3 +22,10 @@ Note:
 - several older TUM evaluation folders were created under `nobody:nogroup`
 - those remain temporarily at the top level until they can be moved with a higher-privilege filesystem pass
 - they should still be treated as historical rather than canonical
+
+Cleanup:
+
+```bash
+sudo chown -R qcar:qcar reports/evaluation
+bash scripts/fix_reports_evaluation_layout.sh
+```
