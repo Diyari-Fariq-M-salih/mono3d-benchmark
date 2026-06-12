@@ -51,6 +51,16 @@ reports/pc_specs.txt
 *.tar.gz
 *.tgz
 
+# LaTeX temporary/build artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
 # Accidental shell-paste artifact
 ]
 
