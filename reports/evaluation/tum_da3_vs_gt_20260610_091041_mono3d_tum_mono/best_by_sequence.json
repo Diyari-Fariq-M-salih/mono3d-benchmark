@@ -1,0 +1,464 @@
+{
+  "freiburg1_desk": {
+    "run_name": "freiburg1_desk__fps2__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg1_desk__fps2__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg1_desk_fps2",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg1_desk",
+      "match_count": 40,
+      "se3": {
+        "rmse_m": 0.20919840485176255,
+        "mean_m": 0.19549666277020822,
+        "median_m": 0.18831520345556857,
+        "max_m": 0.3420585753511242
+      },
+      "sim3": {
+        "rmse_m": 0.02031865029355837,
+        "mean_m": 0.018256617854105577,
+        "median_m": 0.016172287772761945,
+        "max_m": 0.04635319529877564
+      },
+      "sim3_scale": 1.3121800313611391,
+      "path_length_est_m": 6.818926809277574,
+      "path_length_gt_m": 8.999207782703074,
+      "path_ratio_est_over_gt": 0.7577252324792291,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.6050184576197968,
+              -0.6079793743939793,
+              0.5141145263954979
+            ],
+            [
+              -0.768283722041463,
+              -0.27626681649211426,
+              0.5774225216870477
+            ],
+            [
+              -0.20902819997664998,
+              -0.7443371053607483,
+              -0.6342471798894371
+            ]
+          ],
+          "translation": [
+            -0.3521423811091451,
+            0.14503010009069967,
+            1.4231924145151955
+          ]
+        },
+        "sim3": {
+          "scale": 1.3121800313611391,
+          "rotation": [
+            [
+              0.6050184576197968,
+              -0.6079793743939793,
+              0.5141145263954979
+            ],
+            [
+              -0.768283722041463,
+              -0.27626681649211426,
+              0.5774225216870477
+            ],
+            [
+              -0.20902819997664998,
+              -0.7443371053607483,
+              -0.6342471798894371
+            ]
+          ],
+          "translation": [
+            -0.6490130666169831,
+            0.16555128569854183,
+            1.4094166634946579
+          ]
+        }
+      }
+    }
+  },
+  "freiburg1_room": {
+    "run_name": "freiburg1_room__fps3__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg1_room__fps3__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg1_room_fps3",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg1_room",
+      "match_count": 130,
+      "se3": {
+        "rmse_m": 0.46227053989717404,
+        "mean_m": 0.43096889171552794,
+        "median_m": 0.43437381676439846,
+        "max_m": 0.7424093725356936
+      },
+      "sim3": {
+        "rmse_m": 0.08321338580122875,
+        "mean_m": 0.07700594393656382,
+        "median_m": 0.07464849529671883,
+        "max_m": 0.1757494708602888
+      },
+      "sim3_scale": 1.8136952757884726,
+      "path_length_est_m": 9.14583575337624,
+      "path_length_gt_m": 15.739909817494635,
+      "path_ratio_est_over_gt": 0.581060238554277,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.9578082057773282,
+              -0.2006969762571248,
+              0.20572837593988527
+            ],
+            [
+              -0.28703914817161685,
+              -0.6317180187155235,
+              0.7200978213041931
+            ],
+            [
+              -0.014559133302788239,
+              -0.7487676999920471,
+              -0.6626725911685885
+            ]
+          ],
+          "translation": [
+            -0.07223788048088081,
+            -0.32689749882744834,
+            1.50269665566989
+          ]
+        },
+        "sim3": {
+          "scale": 1.8136952757884726,
+          "rotation": [
+            [
+              0.9578082057773282,
+              -0.2006969762571248,
+              0.20572837593988527
+            ],
+            [
+              -0.28703914817161685,
+              -0.6317180187155235,
+              0.7200978213041931
+            ],
+            [
+              -0.014559133302788239,
+              -0.7487676999920471,
+              -0.6626725911685885
+            ]
+          ],
+          "translation": [
+            -0.29479871359129245,
+            -0.44915004922516266,
+            1.528481815452344
+          ]
+        }
+      }
+    }
+  },
+  "freiburg1_xyz": {
+    "run_name": "freiburg1_xyz__fps2__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg1_xyz__fps2__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg1_xyz_fps2",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg1_xyz",
+      "match_count": 52,
+      "se3": {
+        "rmse_m": 0.055788904664054784,
+        "mean_m": 0.04953609921142458,
+        "median_m": 0.04422369081204132,
+        "max_m": 0.10252109412035833
+      },
+      "sim3": {
+        "rmse_m": 0.01070286086033377,
+        "mean_m": 0.010009307918089952,
+        "median_m": 0.009733635538664943,
+        "max_m": 0.018546404733388883
+      },
+      "sim3_scale": 1.4186829069285558,
+      "path_length_est_m": 5.283790919816894,
+      "path_length_gt_m": 7.48030200505567,
+      "path_ratio_est_over_gt": 0.7063606410871872,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              0.03995428458255285,
+              0.7270460147203373,
+              -0.6854252312417245
+            ],
+            [
+              0.999075316224039,
+              -0.039969955549227006,
+              0.015840301929847846
+            ],
+            [
+              -0.01587978763498781,
+              -0.6854243175819398,
+              -0.7279706980449149
+            ]
+          ],
+          "translation": [
+            1.2787445978626288,
+            0.5766146873960339,
+            1.5848260774926741
+          ]
+        },
+        "sim3": {
+          "scale": 1.4186829069285558,
+          "rotation": [
+            [
+              0.03995428458255285,
+              0.7270460147203373,
+              -0.6854252312417245
+            ],
+            [
+              0.999075316224039,
+              -0.039969955549227006,
+              0.015840301929847846
+            ],
+            [
+              -0.01587978763498781,
+              -0.6854243175819398,
+              -0.7279706980449149
+            ]
+          ],
+          "translation": [
+            1.291492840914898,
+            0.5628872322510076,
+            1.6003371200032692
+          ]
+        }
+      }
+    }
+  },
+  "freiburg3_cabinet": {
+    "run_name": "freiburg3_cabinet__fps2__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg3_cabinet__fps2__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg3_cabinet_fps2",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg3_cabinet",
+      "match_count": 75,
+      "se3": {
+        "rmse_m": 0.3066574497576749,
+        "mean_m": 0.30482139275101644,
+        "median_m": 0.31484282578184397,
+        "max_m": 0.36026643987740264
+      },
+      "sim3": {
+        "rmse_m": 0.014729647930249796,
+        "mean_m": 0.013584766975347554,
+        "median_m": 0.012412162088236194,
+        "max_m": 0.030545574860101725
+      },
+      "sim3_scale": 1.3159263526881104,
+      "path_length_est_m": 6.3075170441912025,
+      "path_length_gt_m": 8.280001615367466,
+      "path_ratio_est_over_gt": 0.7617772721788624,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              -0.8498280496340233,
+              0.2648647727801078,
+              -0.45567415791920074
+            ],
+            [
+              0.5183839993541086,
+              0.57625930592876,
+              -0.6318253251842182
+            ],
+            [
+              0.09523820278055505,
+              -0.7731570761951582,
+              -0.627022982242664
+            ]
+          ],
+          "translation": [
+            -0.8774462761191694,
+            1.104275656058864,
+            1.0876671919896816
+          ]
+        },
+        "sim3": {
+          "scale": 1.3159263526881104,
+          "rotation": [
+            [
+              -0.8498280496340233,
+              0.2648647727801078,
+              -0.45567415791920074
+            ],
+            [
+              0.5183839993541086,
+              0.57625930592876,
+              -0.6318253251842182
+            ],
+            [
+              0.09523820278055505,
+              -0.7731570761951582,
+              -0.627022982242664
+            ]
+          ],
+          "translation": [
+            -0.6650147457766157,
+            1.3710808283006843,
+            1.078462948976282
+          ]
+        }
+      }
+    }
+  },
+  "freiburg3_large_cabinet": {
+    "run_name": "freiburg3_large_cabinet__fps2__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg3_large_cabinet__fps2__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg3_large_cabinet_fps2",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg3_large_cabinet",
+      "match_count": 67,
+      "se3": {
+        "rmse_m": 1.6949058961059607,
+        "mean_m": 1.671890738766656,
+        "median_m": 1.6931962153216398,
+        "max_m": 2.2263322862256048
+      },
+      "sim3": {
+        "rmse_m": 0.03026334355854789,
+        "mean_m": 0.026556937572476593,
+        "median_m": 0.022705215502152182,
+        "max_m": 0.07266640285422761
+      },
+      "sim3_scale": 3.7380390310681926,
+      "path_length_est_m": 3.24584610179335,
+      "path_length_gt_m": 12.146986108133367,
+      "path_ratio_est_over_gt": 0.2672141116239525,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              -0.8590245169834397,
+              0.14561880108394182,
+              -0.49078716771350533
+            ],
+            [
+              0.5093969760058463,
+              0.33847092784643207,
+              -0.7911713795625289
+            ],
+            [
+              0.05090776028728886,
+              -0.929641111275556,
+              -0.3649326022279746
+            ]
+          ],
+          "translation": [
+            -1.3063227752267987,
+            0.4248689412871984,
+            1.705339654765037
+          ]
+        },
+        "sim3": {
+          "scale": 3.7380390310681926,
+          "rotation": [
+            [
+              -0.8590245169834397,
+              0.14561880108394182,
+              -0.49078716771350533
+            ],
+            [
+              0.5093969760058463,
+              0.33847092784643207,
+              -0.7911713795625289
+            ],
+            [
+              0.05090776028728886,
+              -0.929641111275556,
+              -0.3649326022279746
+            ]
+          ],
+          "translation": [
+            -0.40169208594217,
+            2.0858500158328774,
+            1.7910998132268747
+          ]
+        }
+      }
+    }
+  },
+  "freiburg3_teddy": {
+    "run_name": "freiburg3_teddy__fps3__chunk30__overlap15__loop",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/hall_da3_large_matrix/runs/freiburg3_teddy__fps3__chunk30__overlap15__loop",
+    "trajectory_summary": {
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd_prepared/freiburg3_teddy_fps3",
+      "tum_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/tum_rgbd/rgbd_dataset_freiburg3_teddy",
+      "match_count": 230,
+      "se3": {
+        "rmse_m": 0.04508696431110323,
+        "mean_m": 0.040449595991726754,
+        "median_m": 0.03531500259893791,
+        "max_m": 0.08464444807251793
+      },
+      "sim3": {
+        "rmse_m": 0.026436242919577878,
+        "mean_m": 0.023892862432158983,
+        "median_m": 0.020554653398614384,
+        "max_m": 0.05053232810427263
+      },
+      "sim3_scale": 0.9554846659166959,
+      "path_length_est_m": 22.079015488700986,
+      "path_length_gt_m": 21.01140153511854,
+      "path_ratio_est_over_gt": 1.0508111727719842,
+      "alignment": {
+        "se3": {
+          "scale": 1.0,
+          "rotation": [
+            [
+              -0.3941832600642004,
+              0.29909291151301376,
+              -0.8690011437091597
+            ],
+            [
+              0.9147440427384053,
+              0.03645316764683867,
+              -0.40238601223590087
+            ],
+            [
+              -0.08867295957482217,
+              -0.9535274494481951,
+              -0.2879626874945119
+            ]
+          ],
+          "translation": [
+            -0.670133740142467,
+            0.20847834904487264,
+            1.5993215118971016
+          ]
+        },
+        "sim3": {
+          "scale": 0.9554846659166959,
+          "rotation": [
+            [
+              -0.3941832600642004,
+              0.29909291151301376,
+              -0.8690011437091597
+            ],
+            [
+              0.9147440427384053,
+              0.03645316764683867,
+              -0.40238601223590087
+            ],
+            [
+              -0.08867295957482217,
+              -0.9535274494481951,
+              -0.2879626874945119
+            ]
+          ],
+          "translation": [
+            -0.7248579576782792,
+            0.1942048322722902,
+            1.5974037046476952
+          ]
+        }
+      }
+    }
+  }
+}

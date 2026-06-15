@@ -43,6 +43,7 @@ outputs/screenshots_for_qualitative_appendix/**
 
 # Local notes that may be machine-specific
 reports/pc_specs.txt
+zx for submitting/
 
 # Archive files
 *.zip

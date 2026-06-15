@@ -1,0 +1,578 @@
+{
+  "chess_seq-03": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-03/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/chess_seq-03_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/chess/seq-03",
+    "trajectory_summary": {
+      "sequence": "chess_seq-03",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-03/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/chess_seq-03_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/chess/seq-03",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.2700291969452466,
+        "mean_m": 1.1779989127607229,
+        "median_m": 1.0902562113083492,
+        "p90_m": 1.8066349810122142,
+        "max_m": 2.06282861116937
+      },
+      "sim3": {
+        "rmse_m": 0.04002303690042787,
+        "mean_m": 0.038474449596014024,
+        "median_m": 0.03788208826083377,
+        "p90_m": 0.05638587847747882,
+        "max_m": 0.06772125091538375,
+        "scale": 1.6649712720170122
+      },
+      "path_ratio_est_over_gt": 0.5996669860208884,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-03/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "chess_seq-05": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-05/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/chess_seq-05_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/chess/seq-05",
+    "trajectory_summary": {
+      "sequence": "chess_seq-05",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-05/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/chess_seq-05_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/chess/seq-05",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.4320981813094185,
+        "mean_m": 1.4236666456258078,
+        "median_m": 1.4222437643700554,
+        "p90_m": 1.653407604637118,
+        "max_m": 1.741282064387667
+      },
+      "sim3": {
+        "rmse_m": 0.03476300058923016,
+        "mean_m": 0.030378944896847344,
+        "median_m": 0.028956776876534022,
+        "p90_m": 0.05087273347275147,
+        "max_m": 0.07648378468648538,
+        "scale": 1.1239842736429388
+      },
+      "path_ratio_est_over_gt": 0.8974006929673822,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/chess_seq-05/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "fire_seq-03": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-03/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/fire_seq-03_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/fire/seq-03",
+    "trajectory_summary": {
+      "sequence": "fire_seq-03",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-03/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/fire_seq-03_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/fire/seq-03",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.0797035988427155,
+        "mean_m": 0.9942276962161767,
+        "median_m": 0.8816403344092629,
+        "p90_m": 1.6082503682562843,
+        "max_m": 1.8928761838634973
+      },
+      "sim3": {
+        "rmse_m": 0.02885000478519902,
+        "mean_m": 0.02657342409354845,
+        "median_m": 0.025870700900325904,
+        "p90_m": 0.03904960723256106,
+        "max_m": 0.05833693263602498,
+        "scale": 1.500057091130936
+      },
+      "path_ratio_est_over_gt": 0.6683134355391408,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-03/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "fire_seq-04": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-04/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/fire_seq-04_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/fire/seq-04",
+    "trajectory_summary": {
+      "sequence": "fire_seq-04",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-04/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/fire_seq-04_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/fire/seq-04",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 0.9107147011428491,
+        "mean_m": 0.7966310157636722,
+        "median_m": 0.6943076802417074,
+        "p90_m": 1.4472756862664176,
+        "max_m": 1.6900912944192334
+      },
+      "sim3": {
+        "rmse_m": 0.02370607191969352,
+        "mean_m": 0.021303611143994365,
+        "median_m": 0.018833805485104767,
+        "p90_m": 0.03796953132255215,
+        "max_m": 0.045860132681793286,
+        "scale": 1.251704824954364
+      },
+      "path_ratio_est_over_gt": 0.8001127105492716,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/fire_seq-04/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "heads_seq-01": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/heads_seq-01/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/heads_seq-01_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/heads/seq-01",
+    "trajectory_summary": {
+      "sequence": "heads_seq-01",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/heads_seq-01/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/heads_seq-01_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/heads/seq-01",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 0.6735514531894388,
+        "mean_m": 0.6067146281263394,
+        "median_m": 0.5791900920928988,
+        "p90_m": 1.0216596425288293,
+        "max_m": 1.2995713753005194
+      },
+      "sim3": {
+        "rmse_m": 0.017747529940193407,
+        "mean_m": 0.015584991766249065,
+        "median_m": 0.012702731483572623,
+        "p90_m": 0.02665447350183262,
+        "max_m": 0.038400727042941646,
+        "scale": 0.8617311469305728
+      },
+      "path_ratio_est_over_gt": 1.1605342386879787,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/heads_seq-01/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "office_seq-02": {
+    "run_name": "20260615T130757Z_fps5_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-02/20260615T130757Z_fps5_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-02_fps5",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-02",
+    "trajectory_summary": {
+      "sequence": "office_seq-02",
+      "run_name": "20260615T130757Z_fps5_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-02/20260615T130757Z_fps5_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-02_fps5",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-02",
+      "match_count": 167,
+      "trajectory_ratio": 0.167,
+      "se3": {
+        "rmse_m": 1.7722725285560021,
+        "mean_m": 1.718723463557667,
+        "median_m": 1.7324911709151976,
+        "p90_m": 2.2441372257357775,
+        "max_m": 2.310531739660711
+      },
+      "sim3": {
+        "rmse_m": 0.09426892918900638,
+        "mean_m": 0.08650473341351476,
+        "median_m": 0.07184851680751744,
+        "p90_m": 0.1488183617492146,
+        "max_m": 0.18284059156966473,
+        "scale": 1.4703739949381276
+      },
+      "path_ratio_est_over_gt": 0.6602863973444778,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-02/20260615T130757Z_fps5_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "office_seq-06": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-06/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-06_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-06",
+    "trajectory_summary": {
+      "sequence": "office_seq-06",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-06/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-06_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-06",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 2.5259788811698582,
+        "mean_m": 2.523276820238137,
+        "median_m": 2.555357081857907,
+        "p90_m": 2.6382416252188743,
+        "max_m": 2.7344180551237076
+      },
+      "sim3": {
+        "rmse_m": 0.08007220922982451,
+        "mean_m": 0.07072473591990391,
+        "median_m": 0.0571371528712204,
+        "p90_m": 0.12387414507922644,
+        "max_m": 0.1630372646295888,
+        "scale": 1.4121918554521153
+      },
+      "path_ratio_est_over_gt": 0.7164337140283576,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-06/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "office_seq-07": {
+    "run_name": "20260615T130757Z_fps5_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-07/20260615T130757Z_fps5_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-07_fps5",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-07",
+    "trajectory_summary": {
+      "sequence": "office_seq-07",
+      "run_name": "20260615T130757Z_fps5_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-07/20260615T130757Z_fps5_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-07_fps5",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-07",
+      "match_count": 167,
+      "trajectory_ratio": 0.167,
+      "se3": {
+        "rmse_m": 1.544315982713611,
+        "mean_m": 1.5048402990351888,
+        "median_m": 1.3657113656433517,
+        "p90_m": 2.0953139365640316,
+        "max_m": 2.434361716044337
+      },
+      "sim3": {
+        "rmse_m": 0.1372669792586327,
+        "mean_m": 0.11345888016225703,
+        "median_m": 0.09554882080675012,
+        "p90_m": 0.202210805379505,
+        "max_m": 0.43796433054901507,
+        "scale": 1.960843659470711
+      },
+      "path_ratio_est_over_gt": 0.5310258445545767,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-07/20260615T130757Z_fps5_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "office_seq-09": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-09/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-09_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-09",
+    "trajectory_summary": {
+      "sequence": "office_seq-09",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-09/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/office_seq-09_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/office/seq-09",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.3167103955599238,
+        "mean_m": 1.2969006374154677,
+        "median_m": 1.3395854708139068,
+        "p90_m": 1.532490505519698,
+        "max_m": 1.791373053852687
+      },
+      "sim3": {
+        "rmse_m": 0.0782358914229499,
+        "mean_m": 0.0724572810393969,
+        "median_m": 0.06539439539991304,
+        "p90_m": 0.11080995373127113,
+        "max_m": 0.14486311712325645,
+        "scale": 1.565779606029758
+      },
+      "path_ratio_est_over_gt": 0.6147250308129245,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/office_seq-09/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "pumpkin_seq-01": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-01/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/pumpkin_seq-01_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/pumpkin/seq-01",
+    "trajectory_summary": {
+      "sequence": "pumpkin_seq-01",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-01/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/pumpkin_seq-01_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/pumpkin/seq-01",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.391577715752044,
+        "mean_m": 1.3737694003149923,
+        "median_m": 1.4272466687705236,
+        "p90_m": 1.5854316374623822,
+        "max_m": 1.695783417828375
+      },
+      "sim3": {
+        "rmse_m": 0.14698821448752,
+        "mean_m": 0.11441583447840996,
+        "median_m": 0.09305483220161678,
+        "p90_m": 0.22334535330967836,
+        "max_m": 0.5179443552200387,
+        "scale": 2.2209715975097573
+      },
+      "path_ratio_est_over_gt": 0.3827262662272907,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-01/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "pumpkin_seq-07": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-07/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/pumpkin_seq-07_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/pumpkin/seq-07",
+    "trajectory_summary": {
+      "sequence": "pumpkin_seq-07",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-07/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/pumpkin_seq-07_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/pumpkin/seq-07",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 1.16599011232922,
+        "mean_m": 1.1503088798994572,
+        "median_m": 1.1209249795849294,
+        "p90_m": 1.4186790521741497,
+        "max_m": 1.5252301874461556
+      },
+      "sim3": {
+        "rmse_m": 0.06653064116376017,
+        "mean_m": 0.061504392049492984,
+        "median_m": 0.062437474201301774,
+        "p90_m": 0.09595479151010623,
+        "max_m": 0.12052228821647988,
+        "scale": 2.169351071570588
+      },
+      "path_ratio_est_over_gt": 0.4387336394266461,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/pumpkin_seq-07/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "redkitchen_seq-03": {
+    "run_name": "20260615T130757Z_fps3_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-03/20260615T130757Z_fps3_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-03_fps3",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-03",
+    "trajectory_summary": {
+      "sequence": "redkitchen_seq-03",
+      "run_name": "20260615T130757Z_fps3_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-03/20260615T130757Z_fps3_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-03_fps3",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-03",
+      "match_count": 100,
+      "trajectory_ratio": 0.1,
+      "se3": {
+        "rmse_m": 2.079291527998278,
+        "mean_m": 2.0282132054103474,
+        "median_m": 2.1927896201552626,
+        "p90_m": 2.4393955181761817,
+        "max_m": 2.475691463881259
+      },
+      "sim3": {
+        "rmse_m": 0.042828557843746826,
+        "mean_m": 0.04018637252428497,
+        "median_m": 0.03990132705211675,
+        "p90_m": 0.057441584287421805,
+        "max_m": 0.08438643253533762,
+        "scale": 1.8717514653155924
+      },
+      "path_ratio_est_over_gt": 0.4859422503134305,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-03/20260615T130757Z_fps3_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "redkitchen_seq-04": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-04/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-04_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-04",
+    "trajectory_summary": {
+      "sequence": "redkitchen_seq-04",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-04/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-04_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-04",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 2.264295902698057,
+        "mean_m": 2.261686440197556,
+        "median_m": 2.2996142881502215,
+        "p90_m": 2.3517125935245464,
+        "max_m": 2.375654976422734
+      },
+      "sim3": {
+        "rmse_m": 0.0483521920270394,
+        "mean_m": 0.038258790885185766,
+        "median_m": 0.028319148196705387,
+        "p90_m": 0.06460361206872925,
+        "max_m": 0.16331511011669939,
+        "scale": 1.6744692098509582
+      },
+      "path_ratio_est_over_gt": 0.5948810586840054,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-04/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "redkitchen_seq-06": {
+    "run_name": "20260615T130757Z_fps3_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-06/20260615T130757Z_fps3_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-06_fps3",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-06",
+    "trajectory_summary": {
+      "sequence": "redkitchen_seq-06",
+      "run_name": "20260615T130757Z_fps3_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-06/20260615T130757Z_fps3_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-06_fps3",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-06",
+      "match_count": 100,
+      "trajectory_ratio": 0.1,
+      "se3": {
+        "rmse_m": 0.8796953757435602,
+        "mean_m": 0.8454415721187004,
+        "median_m": 0.7935129510355937,
+        "p90_m": 1.2020801319563783,
+        "max_m": 1.3443043962336658
+      },
+      "sim3": {
+        "rmse_m": 0.08440250578519885,
+        "mean_m": 0.07443174624421084,
+        "median_m": 0.06184268678931387,
+        "p90_m": 0.12831363172303797,
+        "max_m": 0.22027205279066625,
+        "scale": 2.273546147930697
+      },
+      "path_ratio_est_over_gt": 0.4403304012742464,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-06/20260615T130757Z_fps3_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "redkitchen_seq-12": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-12/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-12_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-12",
+    "trajectory_summary": {
+      "sequence": "redkitchen_seq-12",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-12/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-12_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-12",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 2.0646811477306666,
+        "mean_m": 2.041537926068752,
+        "median_m": 2.0438714838478536,
+        "p90_m": 2.4124086913934435,
+        "max_m": 2.6313717675144743
+      },
+      "sim3": {
+        "rmse_m": 0.08099668851261072,
+        "mean_m": 0.07103569989867357,
+        "median_m": 0.06006598479307634,
+        "p90_m": 0.12408413160588075,
+        "max_m": 0.23909147223668925,
+        "scale": 1.5582354826087104
+      },
+      "path_ratio_est_over_gt": 0.628597234039836,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-12/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "redkitchen_seq-14": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-14/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-14_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-14",
+    "trajectory_summary": {
+      "sequence": "redkitchen_seq-14",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-14/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/redkitchen_seq-14_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/redkitchen/seq-14",
+      "match_count": 67,
+      "trajectory_ratio": 0.067,
+      "se3": {
+        "rmse_m": 0.9657209993467061,
+        "mean_m": 0.9067997807153876,
+        "median_m": 1.0023430386364485,
+        "p90_m": 1.2945524313868173,
+        "max_m": 1.3962847859855174
+      },
+      "sim3": {
+        "rmse_m": 0.05416531204072001,
+        "mean_m": 0.04858413067521268,
+        "median_m": 0.044133934006756706,
+        "p90_m": 0.0803186469840764,
+        "max_m": 0.11805856989205128,
+        "scale": 2.362639996085687
+      },
+      "path_ratio_est_over_gt": 0.43150639037401184,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/redkitchen_seq-14/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "stairs_seq-01": {
+    "run_name": "20260615T130757Z_fps3_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-01/20260615T130757Z_fps3_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/stairs_seq-01_fps3",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/stairs/seq-01",
+    "trajectory_summary": {
+      "sequence": "stairs_seq-01",
+      "run_name": "20260615T130757Z_fps3_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-01/20260615T130757Z_fps3_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/stairs_seq-01_fps3",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/stairs/seq-01",
+      "match_count": 50,
+      "trajectory_ratio": 0.1,
+      "se3": {
+        "rmse_m": 1.1535545029780891,
+        "mean_m": 1.122494255840366,
+        "median_m": 1.0802027277884647,
+        "p90_m": 1.4972186131394307,
+        "max_m": 1.6915118978736783
+      },
+      "sim3": {
+        "rmse_m": 0.056860108731926935,
+        "mean_m": 0.05327109531319446,
+        "median_m": 0.05508157697557209,
+        "p90_m": 0.07663322776094925,
+        "max_m": 0.0905184139050095,
+        "scale": 1.9905667113596452
+      },
+      "path_ratio_est_over_gt": 0.4913891950286112,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-01/20260615T130757Z_fps3_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  },
+  "stairs_seq-04": {
+    "run_name": "20260615T130757Z_fps2_da3_streaming",
+    "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-04/20260615T130757Z_fps2_da3_streaming",
+    "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/stairs_seq-04_fps2",
+    "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/stairs/seq-04",
+    "trajectory_summary": {
+      "sequence": "stairs_seq-04",
+      "run_name": "20260615T130757Z_fps2_da3_streaming",
+      "run_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-04/20260615T130757Z_fps2_da3_streaming",
+      "prepared_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense_prepared/stairs_seq-04_fps2",
+      "gt_sequence_dir": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/datasets/7sense/stairs/seq-04",
+      "match_count": 34,
+      "trajectory_ratio": 0.068,
+      "se3": {
+        "rmse_m": 1.1791398330026341,
+        "mean_m": 1.1785452805114611,
+        "median_m": 1.1829455088630207,
+        "p90_m": 1.2250951139804065,
+        "max_m": 1.2586716060290755
+      },
+      "sim3": {
+        "rmse_m": 0.0313918806959424,
+        "mean_m": 0.028318157394578502,
+        "median_m": 0.02597764597694651,
+        "p90_m": 0.04255134635205487,
+        "max_m": 0.07097241258257996,
+        "scale": 2.0227639219861464
+      },
+      "path_ratio_est_over_gt": 0.514038372901975,
+      "estimate_raw_tum": "/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/outputs/reconstructions/depth_anything_3/7sense/stairs_seq-04/20260615T130757Z_fps2_da3_streaming/eval_7sense/estimate_raw_tum.txt"
+    }
+  }
+}

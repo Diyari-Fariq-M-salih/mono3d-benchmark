@@ -1,0 +1,12 @@
+sequence,mode,tracking_ratio,trajectory_ratio,se3_rmse_m,sim3_rmse_m,sim3_scale,path_ratio_est_over_gt,tracking_frames,frames_total,failure_updates,relocalization_frames,paused_frames
+V2_01_easy,mono-imu,0.93,0.88,0.05,0.05,1.00,1.04,2127,2280,8,7,1
+V1_01_easy,mono-imu,0.96,0.92,0.05,0.05,1.01,1.00,2802,2912,0,0,0
+V1_02_medium,mono-imu,0.94,0.91,0.08,0.08,1.00,1.01,1603,1710,0,0,0
+MH_02_easy,mono-imu,1.00,0.97,0.12,0.09,0.98,1.02,3026,3040,1,1,0
+MH_01_easy,mono-imu,1.00,0.97,0.12,0.10,1.02,1.00,3674,3682,2,2,0
+MH_04_difficult,mono-imu,0.95,0.94,0.19,0.12,0.98,1.03,1613,1693,7,7,0
+V1_03_difficult,mono-imu,0.87,0.83,0.13,0.12,1.02,1.00,1864,2149,30,28,2
+V2_02_medium,mono-imu,1.00,0.98,0.13,0.13,0.98,1.02,2240,2248,1,1,0
+MH_03_medium,mono-imu,0.96,0.92,0.19,0.19,0.99,1.03,2311,2400,4,4,0
+MH_05_difficult,mono-imu,0.94,0.91,0.23,0.22,0.99,1.01,1807,1923,20,19,1
+V2_03_difficult,mono-imu,0.90,0.84,0.23,0.22,0.99,1.02,1730,1921,38,34,4

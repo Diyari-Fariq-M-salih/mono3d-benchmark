@@ -46,6 +46,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--dataset-root", type=Path, default=DEFAULT_EUROC_ROOT)
     parser.add_argument("--sequence", action="append", default=[], help="Specific sequence(s) to prepare, e.g. MH_01_easy")
     parser.add_argument("--write-configs", action="store_true", help="Also generate benchmark experiment YAMLs.")
+    parser.add_argument("--mono-exp-name", default=MONO_EXP_NAME, help="Experiment YAML/basename for monocular runs.")
+    parser.add_argument("--mono-imu-exp-name", default=MONO_IMU_EXP_NAME, help="Experiment YAML/basename for mono+IMU runs.")
+    parser.add_argument(
+        "--trace-root",
+        type=Path,
+        help="Optional override for trace output root. Defaults to outputs/logs/svo_benchmarks/<experiment_name>.",
+    )
     return parser.parse_args()
 
 
@@ -218,7 +225,13 @@ def prepare_sequence(sequence_dir: Path) -> dict[str, Any]:
     }
 
 
-def make_experiment(base: dict[str, Any], prepared: list[dict[str, Any]], use_imu: bool) -> dict[str, Any]:
+def make_experiment(
+    base: dict[str, Any],
+    prepared: list[dict[str, Any]],
+    use_imu: bool,
+    experiment_name: str,
+    trace_root_override: Path | None,
+) -> dict[str, Any]:
     settings = dict(base["settings"])
     settings["dataset_is_stereo"] = False
     settings["pipeline_is_stereo"] = False
@@ -240,8 +253,10 @@ def make_experiment(base: dict[str, Any], prepared: list[dict[str, Any]], use_im
         settings["img_align_prior_lambda_rot"] = 0.0
         settings["img_align_prior_lambda_trans"] = 0.0
 
-    experiment_name = MONO_IMU_EXP_NAME if use_imu else MONO_EXP_NAME
-    trace_root = REPO_ROOT / "outputs" / "logs" / "svo_benchmarks" / experiment_name
+    if trace_root_override is not None:
+        trace_root = trace_root_override
+    else:
+        trace_root = REPO_ROOT / "outputs" / "logs" / "svo_benchmarks" / experiment_name
 
     return {
         "experiment_label": experiment_name,
@@ -271,10 +286,24 @@ def main() -> int:
     payload: dict[str, Any] = {"prepared_sequences": prepared}
     if args.write_configs:
         base_exp = load_yaml(BASE_EXP_SOURCE)
-        mono_exp = make_experiment(base_exp, prepared, use_imu=False)
-        mono_imu_exp = make_experiment(base_exp, prepared, use_imu=True)
-        mono_path = SVO_EXP_ROOT / f"{MONO_EXP_NAME}.yaml"
-        mono_imu_path = SVO_EXP_ROOT / f"{MONO_IMU_EXP_NAME}.yaml"
+        mono_trace_root = args.trace_root / args.mono_exp_name if args.trace_root else None
+        mono_imu_trace_root = args.trace_root / args.mono_imu_exp_name if args.trace_root else None
+        mono_exp = make_experiment(
+            base_exp,
+            prepared,
+            use_imu=False,
+            experiment_name=args.mono_exp_name,
+            trace_root_override=mono_trace_root,
+        )
+        mono_imu_exp = make_experiment(
+            base_exp,
+            prepared,
+            use_imu=True,
+            experiment_name=args.mono_imu_exp_name,
+            trace_root_override=mono_imu_trace_root,
+        )
+        mono_path = SVO_EXP_ROOT / f"{args.mono_exp_name}.yaml"
+        mono_imu_path = SVO_EXP_ROOT / f"{args.mono_imu_exp_name}.yaml"
         dump_yaml(mono_path, mono_exp)
         dump_yaml(mono_imu_path, mono_imu_exp)
         payload["generated_experiments"] = [str(mono_path), str(mono_imu_path)]
