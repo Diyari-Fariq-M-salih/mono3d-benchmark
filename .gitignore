@@ -4,6 +4,11 @@ __pycache__/
 *.pyo
 *.pyd
 .pytest_cache/
+.mypy_cache/
+*.tmp
+*.swp
+*.swo
+.~lock.*
 
 # Local virtual environments
 .venv/

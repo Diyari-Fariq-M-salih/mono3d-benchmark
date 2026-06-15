@@ -27,5 +27,5 @@ Cleanup:
 
 ```bash
 sudo chown -R qcar:qcar reports/evaluation
-bash scripts/fix_reports_evaluation_layout.sh
+bash scripts/archive/diagnostics/fix_reports_evaluation_layout.sh
 ```

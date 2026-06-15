@@ -7,7 +7,7 @@ import subprocess
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_TRACE_ROOT = REPO_ROOT / "outputs" / "logs" / "svo_benchmarks_isolated"
 DEFAULT_SEQUENCE = "V1_01_easy"
 DEFAULT_TAG = "isolated_v1_01"
@@ -21,7 +21,7 @@ DEFAULT_DA3_RUN = (
     / "20260610T132107Z_fps5_da3_streaming"
 )
 DEFAULT_OUTPUT_ROOT = REPO_ROOT / "outputs" / "reconstructions" / "depth_anything_3" / "euroc_pose_swap"
-VALIDATOR = REPO_ROOT / "scripts" / "validate_euroc_external_pose_reconstruction.py"
+VALIDATOR = REPO_ROOT / "scripts" / "archive" / "diagnostics" / "validate_euroc_external_pose_reconstruction.py"
 
 
 def parse_args() -> argparse.Namespace:

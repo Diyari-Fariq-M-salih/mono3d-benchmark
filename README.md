@@ -1,169 +1,115 @@
 # Monocular 3D Reconstruction Benchmark
 
-This repository hosts a comparative study of monocular odometry and dense or streaming 3D reconstruction methods.
+This repository hosts the current `SVO` and `Depth Anything 3` comparative study. The active direction is now narrower and more explicit:
 
-The benchmark is intentionally split into two tracks:
+1. use `SVO` and `SVO + IMU` for trajectory anchoring and evaluation,
+2. use `Depth Anything 3 (DA3)` and `DA3-Streaming` for learned dense reconstruction,
+3. evaluate trajectory quantitatively where ground truth exists,
+4. treat dense reconstruction as qualitative unless dense geometry ground truth is available.
 
-1. Odometry and trajectory estimation
-2. Dense or online 3D reconstruction
+## Active Scope
 
-These tracks overlap, but they do not answer the same research question and should not be collapsed into a single score.
+### Active methods
 
-## Research Questions
-
-### Odometry
-
-- Does adding IMU improve monocular tracking enough to justify the extra system complexity?
-- How much do drift, scale stability, and tracking robustness improve when moving from monocular to mono-inertial pipelines?
-
-### Reconstruction
-
-- Which methods provide the most accurate and useful geometry from monocular video?
-- Which methods can operate online or in a streaming setting?
-- Do streaming or long-context methods solve the chunk consistency issues seen with local feed-forward reconstruction?
-
-## Method Groups
-
-### Odometry and SLAM
-
-- `SVO`
-- `SVO + IMU` if supported by the installed version
-
-### Dense and Streaming Reconstruction
-
+- `SVO Pro Open`
+- `SVO + IMU`
 - `Depth Anything 3`
 - `DA3-Streaming`
 
-## Datasets
+### Active datasets
 
-### Odometry
+- `EuRoC` for visual-inertial trajectory benchmarking
+- `7sense` for RGB-only qualitative and monocular comparison work already completed
+- `OpenLORIS` as the current candidate for an RGB + IMU + GT trajectory benchmark
+- `QCar Evry` retained as local project data
 
-Primary benchmark: `EuRoC MAV`
+### De-emphasized or archival datasets
 
-Suggested first sequences:
+- `ETH3D`
+- `Redwood`
+- `TartanAir`
+- older ad hoc `custom` experiments
 
-- `MH_01_easy`
-- `MH_03_medium`
-- `V1_02_medium`
+These may still exist on disk, but they are no longer part of the main paper path.
 
-### Reconstruction
+## Main Research Questions
 
-Primary working method: `Depth Anything 3 / DA3-Streaming`
+### Trajectory and odometry
 
-Current dataset priority:
+- How much does IMU improve `SVO` trajectory quality and stability?
+- In which regimes does `SVO + IMU` remain valuable as a geometric anchor even when a learned model exists?
 
-- monocular UAV image sequences
-- `EuRoC` for synchronized trajectory experiments alongside `SVO`
-- `ETH3D` is deferred for now
+### Learned reconstruction
 
-## First Milestone
+- How strong is `DA3` as a standalone monocular trajectory and reconstruction baseline?
+- How sensitive is learned pose quality to domain shift and sensing regime?
+- When trajectory is not enough, what qualitative evidence supports or weakens a fused `SVO + GFM` story?
 
-The first benchmark milestone is a minimal odometry baseline on EuRoC:
+## Canonical Entry Points
 
-1. Run `SVO` in monocular mode
-2. Run `SVO + IMU` if available
-3. Evaluate trajectories with `evo`
+### Setup
 
-## Output Conventions
+- `bash scripts/setup_da3.sh`
+- `bash scripts/build_svo.sh`
+- `bash scripts/enter_svo_container.sh`
 
-Trajectory output:
+### Run
+
+- `bash scripts/run_svo_euroc_batch.sh`
+- `bash scripts/run_svo_7sense_batch.sh`
+- `bash scripts/run_svo_qcar_batch.sh`
+- `python3 scripts/run_da3_euroc_batch.py --run`
+- `python3 scripts/run_da3_7sense_batch.py --run`
+- `python3 scripts/run_da3_qcar_batch.py --run`
+
+### Evaluation
+
+- `python3 scripts/evaluate_tum_da3_batch.py`
+- `python3 scripts/evaluate_qcar_trajectories.py`
+- `python3 scripts/evaluate_7sense_trajectories.py`
+
+## Repository Layout
+
+```text
+datasets/                      raw and prepared data
+environment/                   docker, ROS, and local env helpers
+methods/                       active upstream method repos
+outputs/                       raw run artifacts, logs, reconstructions
+reports/evaluation/            canonical comparison bundles and runbooks
+reports/final_comparative_report/
+scripts/                       active orchestration scripts
+scripts/archive/               one-off diagnostics and older experiments
+```
+
+## Evaluation Conventions
+
+Trajectory outputs are standardized as:
 
 ```text
 timestamp tx ty tz qx qy qz qw
 ```
 
-Stored under:
-
-```text
-outputs/trajectories/{method}/{dataset}/{sequence}.txt
-```
-
-Reconstruction output:
-
-- `PLY` point clouds
-- `PLY` meshes when available
-- optional `NPZ` side outputs
-
-Stored under:
+Dense reconstruction outputs are stored under:
 
 ```text
 outputs/reconstructions/{method}/{dataset}/{sequence}/
 ```
 
-Run metadata should be recorded in machine-readable form under `outputs/logs/`.
-
-## Metrics
-
-### Odometry
-
-- `ATE RMSE`
-- `RPE translation`
-- `RPE rotation`
-- `scale error`
-- `tracking lost count`
-- `initialization success`
-- `FPS`
-- runtime
-- memory usage
-- GPU usage when available
-
-### Reconstruction
-
-- `accuracy`
-- `completeness`
-- `F-score`
-- `Chamfer distance`
-- runtime
-- GPU memory
-- maximum sequence length before failure
-
-## Repository Layout
+Machine-readable evaluation bundles live under:
 
 ```text
-environment/
-datasets/
-methods/
-wrappers/
-evaluation/
-outputs/
-reports/
-scripts/
+reports/evaluation/
 ```
 
-## Current Status
+## Current Notes
 
-This repository currently contains:
+- The only active odometry path is `SVO`.
+- The only active learned reconstruction path is `Depth Anything 3`, especially `DA3-Streaming`.
+- `EuRoC` remains the main quantitative visual-inertial benchmark already integrated.
+- Current paper-facing figures and PDFs live under `reports/final_comparative_report/`.
 
-- project scaffolding
-- starter wrapper and evaluation scripts
-- installation registry and environment bootstrap helpers
-- the comparative-study handoff document
+Useful starting points:
 
-Current hardware notes from `reports/pc_specs.txt`:
-
-- system memory: about `31 GiB`
-- GPU: `NVIDIA GeForce RTX 4070`
-- GPU memory: about `12 GiB`
-
-Because of that constraint, the benchmark should prioritize `SVO` for lightweight odometry and use conservative `Depth Anything 3` / `DA3-Streaming` settings for dense mapping experiments.
-
-Environment strategy for reproducibility:
-
-- keep installs scripted and registry-driven
-- prefer minimal dependency installs before optional extras
-- avoid duplicate dataset copies
-- use isolated environments when needed, but avoid unnecessary heavyweight extras
-- prefer method-specific repos that are actively aligned with the intended benchmark setup
-- for classical C++ odometry, use `SVO Pro Open` in its own ROS-oriented environment
-- keep the reconstruction track focused on `Depth Anything 3`, especially the streaming pipeline
-
-Current implementation note:
-
-- `SVO Pro Open` is now the only active odometry method path.
-- `Depth Anything 3` is the only active reconstruction method path, with `DA3-Streaming` as the main dense mapping direction.
-- The repo now contains a full EuRoC `mono` vs `mono-imu` SVO benchmark flow, including per-run sanity reports, comparison plots, and fresh GPU-logged runs.
-
-Current evaluation entry points:
-
-- EuRoC runbook: [reports/evaluation/SVO_EuRoC_Runbook.md](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/SVO_EuRoC_Runbook.md)
-- latest GPU-aware full comparison bundle: [reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/svo_full11_euroc_mono_vs_mono_imu_gpu_20260601)
+- evaluation index: [reports/evaluation/README.md](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/README.md)
+- EuRoC runbook: [reports/evaluation/runbooks/SVO_EuRoC_Runbook.md](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/runbooks/SVO_EuRoC_Runbook.md)
+- DA3 runbook: [reports/evaluation/runbooks/DA3_Streaming_Runbook.md](/home/qcar/Documents/Diyari_M_salih_2026/mono3d-benchmark/reports/evaluation/runbooks/DA3_Streaming_Runbook.md)
